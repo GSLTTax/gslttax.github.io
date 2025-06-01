@@ -5,45 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSLT Tax and Accounting</title>
     <style>
+        /* Base Styles */
         body {
             font-family: Arial, sans-serif;
             background-image: url('Images/Cover page4.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: absolute;
+            background-attachment: fixed;
             color: darkblue;
-            margin: 50px;
+            margin: 5vw;
         }
+
         .center {
             text-align: center;
         }
+
         h1, h2 {
             color: darkblue;
         }
+
         p, ul {
             font-size: 18px;
             text-align: left;
         }
+
         ul {
             list-style-type: square;
         }
+
         .logo {
+            width: 30%;
+            max-width: 120px;
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 180px;
-            height: auto;
         }
+
         .content {
             width: 70%;
-            margin-left: 0;
+            margin: auto;
+        }
+
+        /* Mobile-Friendly Adjustments */
+        @media (max-width: 768px) {
+            body {
+                background-size: contain;
+                margin: 3vw;
+            }
+            
+            .content {
+                width: 90%;
+                text-align: center;
+            }
+
+            p, ul {
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .logo {
+                position: static;
+                display: block;
+                margin: auto;
+                width: 50%;
+                max-width: 150px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="Images/CPA logo1.png" alt="CPA Logo1" class="logo">
+        <img src="Images/CPA logo1.png" alt="CPA Logo" class="logo">
     </header>
 
     <br>
