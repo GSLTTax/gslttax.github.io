@@ -46,3 +46,6 @@ We understand the unique needs of each client and deliver services with professi
 ---
 
 For inquiries or consultations, feel free to reach out to us via email or phone. Let us handle your taxes and accounting, so you can focus on developing your business.
+<style>
+    body { background-color: lightblue; }
+</style>
