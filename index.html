@@ -8,11 +8,11 @@
         /* Base Styles for Desktop */
         body {
             font-family: Arial, sans-serif;
-            background-image: url('Images/Cover page4.png'); /* Updated PC Background */
+            background-image: url('Images/Cover page4.png'); /* Desktop Background */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: absolute;
+            background-attachment: fixed;
             color: darkblue;
             margin: 5vw;
         }
@@ -26,8 +26,10 @@
         }
 
         p, ul {
-            font-size: 18px;
+            font-size: 2vw; /* Responsive font size */
             text-align: left;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         ul {
@@ -43,18 +45,19 @@
         }
 
         .content {
-            width: 70%;
+            width: 100%;
+            max-width: 900px; /* Limits max width */
             margin: auto;
         }
 
         /* Mobile-Friendly Adjustments */
         @media (max-width: 768px) {
             body {
-                background-image: url('Images/CoverPageMobile.jpg'); /* Mobile Background */
+                background-image: url('Images/CoverPageMobile.png'); /* Mobile Background */
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
-                background-attachment: absolute;
+                background-attachment: scroll;
                 margin: 3vw;
             }
             
@@ -64,7 +67,7 @@
             }
 
             p, ul {
-                font-size: 16px;
+                font-size: 16px; /* Fixed size for small screens */
                 text-align: center;
             }
 
