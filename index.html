@@ -34,9 +34,16 @@
             font-size: 2vw; /* Matches heading size */
         }
 
-        /* Make "Based in Toronto" & "For inquiries" match "About Us" */
-        .content p:last-of-type, .content p:nth-last-of-type(2) {
-            font-size: 2vw; /* Ensures these lines match "About Us" */
+        /* Reduce font size by 40% for selected text */
+        .small-text {
+            font-size: 1.2vw; /* 40% smaller than default */
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .small-text {
+                font-size: 12px; /* Fixed for readability on smaller screens */
+            }
         }
 
         ul {
@@ -120,12 +127,12 @@
     <!-- Left-Aligned Content -->
     <div class="content">
         <h2>About Us</h2>
-        <p>GSLT Tax and Accounting is a professional CPA firm dedicated to helping individuals and businesses navigate the complexities of tax and financial compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two decades of expertise and personalized service to every client.</p>
+        <p class="small-text">GSLT Tax and Accounting is a professional CPA firm dedicated to helping individuals and businesses navigate the complexities of tax and financial compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two decades of expertise and personalized service to every client.</p>
         
-        <p>Whether you're a small business, a growing corporation, or an individual looking for trustworthy tax assistance, we provide tailored solutions to meet your needs.</p>
+        <p class="small-text">Whether you're a small business, a growing corporation, or an individual looking for trustworthy tax assistance, we provide tailored solutions to meet your needs.</p>
 
         <h2>Our Services</h2>
-        <ul>
+        <ul class="small-text">
             <li><strong>T2 Corporate Tax Filing</strong></li>
             <li><strong>T1 Individual Tax Returns</strong></li>
             <li><strong>GST/HST Registration and Filing</strong></li>
@@ -136,17 +143,17 @@
         </ul>
 
         <h2>Why Choose GSLT?</h2>
-        <p>✅ Experienced CPA with a focus on client success</p>
-        <p>✅ Affordable and transparent pricing</p>
-        <p>✅ Timely and responsive communication</p>
-        <p>✅ Compliance-focused and detail-oriented</p>
-        <p>✅ Serving both local and remote clients across Canada</p>
+        <ul class="small-text">
+            <li>✅ Experienced CPA with a focus on client success</li>
+            <li>✅ Affordable and transparent pricing</li>
+            <li>✅ Timely and responsive communication</li>
+            <li>✅ Compliance-focused and detail-oriented</li>
+            <li>✅ Serving both local and remote clients across Canada</li>
+        </ul>
 
-        <br>
+        <p class="small-text">📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
 
-        <p>📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
-
-        <p>For inquiries or consultations, feel free to reach out to us via email or phone.</p>
+        <p class="small-text">For inquiries or consultations, feel free to reach out to us via email or phone.</p>
     </div>
 </body>
 </html>
