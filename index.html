@@ -12,7 +12,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: absolute;
+            background-attachment: fixed;
             color: darkblue;
             margin: 5vw;
             display: flex;
@@ -34,15 +34,10 @@
             font-size: 2vw; /* Matches heading size */
         }
 
-        /* Reduce font size for selected text */
-        .small-text {
-            font-size: 16px;
-        }
-
-        /* Reduce space between specified header lines */
-        .header-content h1, .header-content h2, .header-content p {
-            margin-bottom: 5px; /* Reduce space between lines */
-            padding: 0; /* Remove extra padding */
+        /* Reduce line spacing for specified header lines */
+        .header-content p.reduce-spacing {
+            margin-bottom: 2px; /* Less space between lines */
+            padding: 0; /* Removes extra padding */
         }
 
         ul {
@@ -109,24 +104,24 @@
         <img src="Images/CPA logo1.png" alt="CPA Logo" class="logo">
     </header>
 
-    <!-- Centered Header Content with Reduced Spacing -->
+    <!-- Centered Header Content with Reduced Line Spacing -->
     <div class="header-content">
         <h1>GSLT Tax and Accounting</h1>
         <h2>George Mathew, CPA, CGA</h2>
-        <p><strong>Chartered Professional Accountant</strong></p>
-        <p>📧 Email: <a href="mailto:georgemathew@gslttax.com">georgemathew@gslttax.com</a></p>
-        <p>📞 Phone: +1 (416) 871-9829</p>
+        <p class="reduce-spacing"><strong>Chartered Professional Accountant</strong></p>
+        <p class="reduce-spacing">📧 Email: <a href="mailto:georgemathew@gslttax.com">georgemathew@gslttax.com</a></p>
+        <p class="reduce-spacing">📞 Phone: +1 (416) 871-9829</p>
     </div>
 
     <!-- Left-Aligned Content -->
     <div class="content">
         <h2>About Us</h2>
-        <p class="small-text">GSLT Tax and Accounting is a professional CPA firm dedicated to helping individuals and businesses navigate the complexities of tax and financial compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two decades of expertise and personalized service to every client.</p>
+        <p>GSLT Tax and Accounting is a professional CPA firm dedicated to helping individuals and businesses navigate the complexities of tax and financial compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two decades of expertise and personalized service to every client.</p>
         
-        <p class="small-text">Whether you're a small business, a growing corporation, or an individual looking for trustworthy tax assistance, we provide tailored solutions to meet your needs.</p>
+        <p>Whether you're a small business, a growing corporation, or an individual looking for trustworthy tax assistance, we provide tailored solutions to meet your needs.</p>
 
         <h2>Our Services</h2>
-        <ul class="small-text">
+        <ul>
             <li><strong>T2 Corporate Tax Filing</strong></li>
             <li><strong>T1 Individual Tax Returns</strong></li>
             <li><strong>GST/HST Registration and Filing</strong></li>
@@ -137,7 +132,7 @@
         </ul>
 
         <h2>Why Choose GSLT?</h2>
-        <ul class="small-text">
+        <ul>
             <li>✅ Experienced CPA with a focus on client success</li>
             <li>✅ Affordable and transparent pricing</li>
             <li>✅ Timely and responsive communication</li>
@@ -145,9 +140,9 @@
             <li>✅ Serving both local and remote clients across Canada</li>
         </ul>
 
-        <p class="small-text">📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
+        <p>📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
 
-        <p class="small-text">For inquiries or consultations, feel free to reach out to us via email or phone.</p>
+        <p>For inquiries or consultations, feel free to reach out to us via email or phone.</p>
     </div>
 </body>
 </html>
