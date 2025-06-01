@@ -17,7 +17,7 @@
             margin: 5vw;
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Align content to the left */
+            align-items: flex-start; /* Align main content to the left */
             justify-content: center;
         }
 
@@ -48,6 +48,14 @@
             left: 10px;
         }
 
+        /* Centered Header Section */
+        .header-content {
+            text-align: center;
+            width: 100%;
+            margin: auto;
+        }
+
+        /* Left-Aligned Main Content (About Us and Below) */
         .content {
             width: 70%;  /* Takes 70% width, leaving 30% blank */
             max-width: 900px;
@@ -92,14 +100,16 @@
         <img src="Images/CPA logo1.png" alt="CPA Logo" class="logo">
     </header>
 
-    <br>
-    <h1 class="center">GSLT Tax and Accounting</h1>
-    <h2 class="center">George Mathew, CPA, CGA</h2>
+    <!-- Centered Header Content -->
+    <div class="header-content">
+        <h1>GSLT Tax and Accounting</h1>
+        <h2>George Mathew, CPA, CGA</h2>
+        <p><strong>Chartered Professional Accountant</strong></p>
+        <p>📧 Email: <a href="mailto:georgemathew@gslttax.com">georgemathew@gslttax.com</a></p>
+        <p>📞 Phone: +1 (416) 871-9829</p>
+    </div>
 
-    <p class="center"><strong>Chartered Professional Accountant</strong></p>
-    <p class="center">📧 Email: <a href="mailto:georgemathew@gslttax.com">georgemathew@gslttax.com</a></p>
-    <p class="center">📞 Phone: +1 (416) 871-9829</p>
-
+    <!-- Left-Aligned Content -->
     <div class="content">
         <h2>About Us</h2>
         <p>GSLT Tax and Accounting is a professional CPA firm dedicated to helping individuals and businesses navigate the complexities of tax and financial compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two decades of expertise and personalized service to every client.</p>
