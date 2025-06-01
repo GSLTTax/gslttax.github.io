@@ -12,7 +12,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: absolute;
+            background-attachment: fixed;
             color: darkblue;
             margin: 5vw;
             display: flex;
@@ -34,9 +34,15 @@
             font-size: 2vw; /* Matches heading size */
         }
 
-        /* Set specific text to 16px */
+        /* Reduce font size for selected text */
         .small-text {
             font-size: 16px;
+        }
+
+        /* Reduce space between specified header lines */
+        .header-content h1, .header-content h2, .header-content p {
+            margin-bottom: 5px; /* Reduce space between lines */
+            padding: 0; /* Remove extra padding */
         }
 
         ul {
@@ -56,11 +62,6 @@
             text-align: center;
             width: 100%;
             margin: auto;
-        }
-
-        .header-content p {
-            text-align: center;
-            font-size: 1.8vw; /* Ensures all text in header section is centered */
         }
 
         /* Left-Aligned Main Content (About Us and Below) */
@@ -108,7 +109,7 @@
         <img src="Images/CPA logo1.png" alt="CPA Logo" class="logo">
     </header>
 
-    <!-- Centered Header Content -->
+    <!-- Centered Header Content with Reduced Spacing -->
     <div class="header-content">
         <h1>GSLT Tax and Accounting</h1>
         <h2>George Mathew, CPA, CGA</h2>
