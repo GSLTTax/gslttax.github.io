@@ -49,3 +49,6 @@ For inquiries or consultations, feel free to reach out to us via email or phone.
 <style>
     body { background-color: lightblue; }
 </style>
+<style>
+    body { font-family: "Arial", sans-serif; }
+</style>
