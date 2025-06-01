@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSLT Tax and Accounting</title>
     <style>
-        /* Base Styles */
+        /* Base Styles for Desktop */
         body {
             font-family: Arial, sans-serif;
-            background-image: url('Images/Cover page4.png');
+            background-image: url('Images/Cover page4.png'); /* Updated PC Background */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: absolute;
+            background-attachment: fixed;
             color: darkblue;
             margin: 5vw;
         }
@@ -50,7 +50,11 @@
         /* Mobile-Friendly Adjustments */
         @media (max-width: 768px) {
             body {
+                background-image: url('Images/CoverPageMobile.png'); /* Mobile Background */
                 background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
                 margin: 3vw;
             }
             
