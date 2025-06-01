@@ -19,7 +19,6 @@ Whether you're a small business, a growing corporation, or an individual looking
 
 We offer a comprehensive range of accounting and tax services, including:
 
-- **Personal and Corporate Tax Preparation**
 - **T2 Corporate Tax Filing**
 - **T1 Individual Tax Returns**
 - **GST/HST Registration and Filing**
@@ -46,4 +45,4 @@ We understand the unique needs of each client and deliver services with professi
 
 ---
 
-For inquiries or consultations, feel free to reach out to us via email or phone. Let us handle your taxes and accounting, so you can focus on what matters most — your business and life.
+For inquiries or consultations, feel free to reach out to us via email or phone. Let us handle your taxes and accounting, so you can focus on developing your business.
