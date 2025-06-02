@@ -25,25 +25,31 @@
             text-align: center;
         }
 
-        h1, h2 {
-            color: darkblue;
-        }
-/* Ensure uniform font size for headings */
         h1 {
-            font-size: 3vw; /* Matches heading size */
+            font-size: 36px; /* Ensures h1 is larger than other headings */
+            margin-bottom: 10px;
         }
-        /* Ensure uniform font size for headings */
+
         h2 {
-            font-size: 2vw; /* Matches heading size */
+            font-size: 24px;
+            margin-top: 5px;
         }
-/* Ensure uniform font size for headings */
+
         h3 {
-            font-size: 1.5vw; /* Matches heading size */
+            font-size: 20px;
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
+
+        p {
+            font-size: 18px; /* Consistent paragraph size */
+            line-height: 1.5; /* Adjusts space between lines */
+        }
+
         /* Reduce line spacing for specified header lines */
         .header-content p.reduce-spacing {
             margin-bottom: 2px; /* Less space between lines */
-            padding: 0; /* Removes extra padding */
+            padding: 0;
         }
 
         ul {
@@ -67,10 +73,10 @@
 
         /* Left-Aligned Main Content (About Us and Below) */
         .content {
-            width: 70%;  /* Takes 70% width, leaving 30% blank */
+            width: 70%;
             max-width: 900px;
-            margin-left: 0;  /* Align content to left */
-            margin-right: auto; /* Push content left to leave space on right */
+            margin-left: 0;
+            margin-right: auto;
         }
 
         /* Mobile-Friendly Adjustments */
@@ -82,18 +88,27 @@
                 background-repeat: no-repeat;
                 background-attachment: scroll;
                 margin: 3vw;
-                align-items: left; /* Center content on mobile */
+                align-items: center; /* Center content on mobile */
             }
-            
+
+            .header-content {
+                text-align: center; /* Ensures header elements are properly centered */
+            }
+
+            p.reduce-spacing {
+                text-align: center;
+                font-size: 16px; /* Smaller font for mobile */
+            }
+
             .content {
                 width: 90%;
                 text-align: center;
             }
 
             p, ul {
-                font-size: 19px; /* Fixed size for small screens */
-                line-height: 1.5; /* Adjust the number for more or less spacing */
-                text-align: left;
+                font-size: 16px;
+                line-height: 1.5;
+                text-align: center;
             }
 
             .logo {
@@ -115,7 +130,7 @@
     <div class="header-content">
         <h1>GSLT Tax and Accounting</h1>
         <h2>George Mathew, CPA, CGA</h2>
-        <h3>Chartered Professional Accountant<h3>
+        <h3>Chartered Professional Accountant</h3>
         <p class="reduce-spacing">📧 Email: <a href="mailto:georgemathew@gslttax.com">georgemathew@gslttax.com</a></p>
         <p class="reduce-spacing">📞 Phone: +1 (416) 871-9829</p>
     </div>
