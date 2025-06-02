@@ -12,13 +12,19 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: absolute;
+            background-attachment: fixed;
             color: darkblue;
-            margin: 5vw;
+            margin: 0; /* Removes extra margin */
+            padding: 0; /* Removes extra padding */
             display: flex;
             flex-direction: column;
             align-items: flex-start; /* Align main content to the left */
             justify-content: center;
+        }
+
+        header {
+            margin: 0; /* Ensures no unwanted space */
+            padding: 0;
         }
 
         .center {
@@ -29,9 +35,10 @@
             color: darkblue;
         }
 
-        /* Ensure uniform font size for headings */
-        h2 {
-            font-size: 2vw; /* Matches heading size */
+        /* Reduce line spacing for headings */
+        .header-content h1, .header-content h2 {
+            margin-bottom: 2px; /* Sets spacing to 2px */
+            padding: 0; /* Removes extra padding */
         }
 
         /* Reduce line spacing for specified header lines */
@@ -45,8 +52,8 @@
         }
 
         .logo {
-            width: 50%;
-            max-width: 200px;
+            width: 80%;
+            max-width: 120px;
             position: absolute;
             top: 10px;
             left: 10px;
