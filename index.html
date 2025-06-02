@@ -61,12 +61,14 @@
             font-size: 18px;
         }
 
+        /* Logo Styling */
         .logo {
             width: 50%;
             max-width: 200px;
             position: absolute;
             top: 10px;
-            left: 10px;
+            left: 10px; /* Ensures the logo stays fully left-aligned */
+            display: block;
         }
 
         /* Left-Aligned Main Content */
@@ -109,10 +111,12 @@
                 text-align: justify;
             }
 
+            /* Updated Logo Styling for Mobile */
             .logo {
-                position: static;
+                position: absolute; /* Keeps it positioned */
+                top: 10px;
+                left: 10px; /* Ensures it is fully left-aligned */
                 display: block;
-                margin: auto;
                 width: 50%;
                 max-width: 150px;
             }
