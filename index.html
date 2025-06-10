@@ -49,19 +49,112 @@
             text-align: justify;
         }
 
-        .service-link {
-            font-size: 20px;
-            font-weight: bold;
-            color: #004080;
-            text-decoration: none;
+        /* Centered Header Content */
+        .header-content {
+            text-align: center; /* Ensures all elements are fully centered */
+            width: 100%;
+            margin: auto;
+        }
+
+        .header-content p {
+            text-align: center; /* Ensures Email & Phone are centered */
+            font-size: 18px;
+        }
+
+        /* Logo Styling */
+        .logo {
+            width: 50%;
+            max-width: 200px;
+            position: absolute;
+            top: 10px;
+            left: 10px; /* Ensures the logo stays fully left-aligned */
             display: block;
-            margin-top: 10px;
         }
 
-        .service-link:hover {
-            color: #0066cc;
+        /* Adjusted Canada Logo Styling for Desktop */
+        .logo-right {
+            width: 18%;
+            max-width: 200px;
+            position: absolute;
+            top: 10px;
+            right: 100px; /* Slightly moved left */
+            display: block;
         }
 
+        /* Left-Aligned Main Content */
+        .content {
+            width: 80%;
+            max-width: 900px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        /* Mobile-Friendly Adjustments */
+        @media (max-width: 768px) {
+            body {
+                background-image: url('Images/CoverPageMobile.png'); /* Mobile Background */
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                margin: 3vw;
+                align-items: flex-start; /* Left-align content */
+            }
+
+            .header-content {
+                text-align: center; /* Ensures header elements align center */
+            }
+
+            .header-content p {
+                text-align: center; /* Ensures Email & Phone stay centered on mobile */
+                font-size: 16px;
+            }
+
+            .content {
+                width: 90%;
+                text-align: justify; /* Justifies content */
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+                text-align: justify;
+            }
+
+            /* Adjusted Logo Styling for Mobile */
+            .logo {
+                position: absolute; /* Keeps it positioned */
+                top: 10px;
+                left: 10px; /* Ensures it is fully left-aligned */
+                display: block;
+                width: 50%;
+                max-width: 150px;
+            }
+
+            /* Adjusted Canada Logo Styling for Mobile */
+            .logo-right {
+                position: absolute;
+                top: 10px;
+                right: 5px; /* Kept fully right-aligned */
+                display: block;
+                width: 25%; /* Kept larger for mobile */
+                max-width: 150px;
+            }
+
+            /* Reduced Heading Sizes for Mobile */
+            h1 {
+                font-size: 32px; /* Smaller size on mobile */
+                margin-top: 80px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -70,6 +163,7 @@
         <img src="Images/canada logo.png" alt="Canada Logo" class="logo-right">
     </header>
 
+    <!-- Centered Header Content -->
     <div class="header-content">
         <h1>GSLT Tax and Accounting</h1>
         <h2>George Mathew, CPA, CGA</h2>
@@ -78,6 +172,7 @@
         <p>📞 Phone: +1 (416) 871-9829</p>
     </div>
 
+    <!-- Left-Aligned Content -->
     <div class="content">
         <h4>About Us</h4>
         <p>GSLT Tax and Accounting is a professional CPA firm dedicated to helping individuals and businesses navigate the complexities of tax and financial compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two decades of expertise and personalized service to every client.</p>
@@ -85,19 +180,16 @@
         <p>Whether you're a small business, a growing corporation, or an individual looking for trustworthy tax assistance, we provide tailored solutions to meet your needs.</p>
 
         <h4>Our Services</h4>
-        <p>We offer a range of accounting and tax services, including:</p>
-        <ul>
-            <li>T2 Corporate Tax Filing</li>
-            <li>T1 Individual Tax Returns</li>
-            <li>GST/HST Registration and Filing</li>
-            <li>Bookkeeping and Financial Statements</li>
-            <li>Payroll Setup and Remittance</li>
-            <li>Tax Planning and Advisory</li>
-            <li>New Business Setup Support</li>
-        </ul>
+        <p>▪️ T2 Corporate Tax Filing</p>
+        <p>▪️ T1 Individual Tax Returns</p>
+        <p>▪️ GST/HST Registration and Filing</p>
+        <p>▪️ Bookkeeping and Financial Statements</p>
+        <p>▪️ Payroll Setup and Remittance</p>
+        <p>▪️ Tax Planning and Advisory</p>
+        <p>▪️ New Business Setup Support</p>
 
         <!-- Clickable Link to Services Page -->
-        <p><a href="services.html" class="service-link">View Our Full Services Here</a></p>
+        <p><a href="services.html">View Our Full Services Here</a></p>
 
         <h4>Why Choose GSLT?</h4>
         <p>✅ Experienced CPA with a focus on client success</p>
