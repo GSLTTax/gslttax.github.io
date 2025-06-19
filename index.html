@@ -8,7 +8,7 @@
         /* Base Styles for Desktop */
         body {
             font-family: Arial, sans-serif;
-            background-image: url('Images/Cover page4.png'); /* Desktop Background */
+            background-image: url('Images/Cover page4.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -49,39 +49,35 @@
             text-align: justify;
         }
 
-        /* Centered Header Content */
         .header-content {
-            text-align: center; /* Ensures all elements are fully centered */
+            text-align: center;
             width: 100%;
             margin: auto;
         }
 
         .header-content p {
-            text-align: center; /* Ensures Email & Phone are centered */
+            text-align: center;
             font-size: 18px;
         }
 
-        /* Logo Styling */
         .logo {
             width: 50%;
             max-width: 200px;
             position: absolute;
             top: 10px;
-            left: 10px; /* Ensures the logo stays fully left-aligned */
+            left: 10px;
             display: block;
         }
 
-        /* Adjusted Canada Logo Styling for Desktop */
         .logo-right {
             width: 18%;
             max-width: 200px;
             position: absolute;
             top: 10px;
-            right: 100px; /* Slightly moved left */
+            right: 100px;
             display: block;
         }
 
-        /* Left-Aligned Main Content */
         .content {
             width: 80%;
             max-width: 900px;
@@ -89,30 +85,48 @@
             margin-right: auto;
         }
 
-        /* Mobile-Friendly Adjustments */
+        /* French toggle button styling */
+        .lang-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: darkblue;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .lang-toggle:hover {
+            background-color: navy;
+        }
+
         @media (max-width: 768px) {
             body {
-                background-image: url('Images/CoverPageMobile.png'); /* Mobile Background */
+                background-image: url('Images/CoverPageMobile.png');
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: scroll;
                 margin: 3vw;
-                align-items: flex-start; /* Left-align content */
+                align-items: flex-start;
             }
 
             .header-content {
-                text-align: center; /* Ensures header elements align center */
+                text-align: center;
             }
 
             .header-content p {
-                text-align: center; /* Ensures Email & Phone stay centered on mobile */
+                text-align: center;
                 font-size: 16px;
             }
 
             .content {
                 width: 90%;
-                text-align: justify; /* Justifies content */
+                text-align: justify;
             }
 
             p {
@@ -121,29 +135,26 @@
                 text-align: justify;
             }
 
-            /* Adjusted Logo Styling for Mobile */
             .logo {
-                position: absolute; /* Keeps it positioned */
+                position: absolute;
                 top: 10px;
-                left: 10px; /* Ensures it is fully left-aligned */
+                left: 10px;
                 display: block;
                 width: 50%;
                 max-width: 150px;
             }
 
-            /* Adjusted Canada Logo Styling for Mobile */
             .logo-right {
                 position: absolute;
                 top: 10px;
-                right: 5px; /* Kept fully right-aligned */
+                right: 5px;
                 display: block;
-                width: 25%; /* Kept larger for mobile */
+                width: 25%;
                 max-width: 150px;
             }
 
-            /* Reduced Heading Sizes for Mobile */
             h1 {
-                font-size: 32px; /* Smaller size on mobile */
+                font-size: 32px;
                 margin-top: 80px;
             }
 
@@ -154,6 +165,13 @@
             h3 {
                 font-size: 22px;
             }
+
+            .lang-toggle {
+                top: 80px;
+                right: 10px;
+                font-size: 12px;
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
@@ -161,6 +179,9 @@
     <header>
         <img src="Images/CPA logo1.png" alt="CPA Logo" class="logo">
         <img src="Images/canada logo.png" alt="Canada Logo" class="logo-right">
+
+        <!-- French Language Toggle Button -->
+        <a href="indexfrench.html" class="lang-toggle">Français</a>
     </header>
 
     <!-- Centered Header Content -->
