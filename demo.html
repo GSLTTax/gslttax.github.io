@@ -13,12 +13,12 @@
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      color: #002147;
       background-image: url('Images/Cover page4.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
+      color: #002147;
     }
 
     header {
@@ -41,32 +41,38 @@
 
     .hero h1 {
       font-size: 48px;
-      margin-bottom: 10px;
       color: #003366;
+      margin-bottom: 10px;
     }
 
     .hero h2 {
       font-size: 32px;
-      margin-bottom: 5px;
       color: #005599;
+      margin-bottom: 5px;
     }
 
     .hero h3 {
       font-size: 24px;
-      margin-bottom: 10px;
       color: #0077aa;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin: 10px 0;
     }
 
     .hero a {
       color: #003366;
       font-weight: 600;
+      text-decoration: none;
     }
 
     .content {
       max-width: 900px;
       margin: auto;
       padding: 30px 20px;
-      background-color: rgba(255, 255, 255, 0.93);
+      background-color: rgba(255, 255, 255, 0.92);
       border-radius: 10px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
@@ -83,7 +89,7 @@
       text-align: justify;
     }
 
-    a.review-button {
+    .review-button {
       display: inline-block;
       background-color: #1c87c9;
       color: white;
@@ -97,8 +103,13 @@
       margin: 30px auto;
     }
 
-    a.review-button:hover {
+    .review-button:hover {
       background-color: #145f8c;
+    }
+
+    .centered-contact {
+      text-align: center;
+      margin-top: 20px;
     }
 
     @media screen and (max-width: 768px) {
@@ -128,9 +139,12 @@
     <h1>GSLT Tax and Accounting</h1>
     <h2>George Mathew, CPA, CGA</h2>
     <h3>Chartered Professional Accountant</h3>
-    <p>📧 <a href="mailto:georgemathew@gslttax.com">georgemathew@gslttax.com</a></p>
-    <p>📞 +1 (416) 871-9829</p>
-    <p><a href="https://forms.gle/s65oTucdAP37JR678" target="_blank">📅 Book an Appointment</a></p>
+
+    <div class="centered-contact">
+      <p>📧 <a href="mailto:georgemathew@gslttax.com">georgemathew@gslttax.com</a></p>
+      <p>📞 +1 (416) 871-9829</p>
+      <p>📅 <a href="https://forms.gle/s65oTucdAP37JR678" target="_blank">Book an Appointment</a></p>
+    </div>
   </section>
 
   <section class="content">
