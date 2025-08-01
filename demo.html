@@ -36,17 +36,31 @@
       background: url('Images/TextTexture.png') repeat;
       -webkit-background-clip: text;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
       color: transparent;
+      display: inline-block;
+    }
+
+    /* On mobile, fallback to solid color */
+    @media (max-width: 768px) {
+      .textured-text {
+        background: none;
+        -webkit-background-clip: none;
+        background-clip: none;
+        -webkit-text-fill-color: #004080;
+        color: #004080;
+      }
     }
 
     h1 {
       font-size: 36px;
-      color: #004080;
+      margin-bottom: 20px;
     }
 
     h2 {
       font-size: 28px;
       color: #0066cc;
+      margin-top: 30px;
     }
 
     p {
