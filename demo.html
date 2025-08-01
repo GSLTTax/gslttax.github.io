@@ -18,7 +18,7 @@
       font-family: 'Inter', sans-serif;
       color: #002147;
       background-image:
-        /* Denser GSLT pattern: 6× “GSLT ” per 120px tile */
+        /* 1) Denser GSLT pattern: 6× “GSLT ” per 120px tile */
         url("data:image/svg+xml;charset=UTF-8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'>\
   <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
@@ -26,7 +26,7 @@
   <text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
   <text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
 </svg>"),
-        /* Desktop cover image */
+        /* 2) Desktop cover image */
         url('Images/Cover page4.png');
       background-repeat: repeat, no-repeat;
       background-size: auto, cover;
@@ -54,16 +54,13 @@
     }
 
     /* ───────────────────────────────────────────────────────────
-       HEADER & LOGOS
-       (white background to mask texture behind logos)
+       HEADER & LOGOS (transparent)
     ─────────────────────────────────────────────────────────── */
     header {
       position: relative;
-      z-index: 2;
+      z-index: 1;
       padding: 1rem 0;
       text-align: center;
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .logo,
     .logo-right {
@@ -215,14 +212,11 @@
     <p>📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
 
     <div>
-      <a
-        href="https://g.page/r/CW2knUW1ff0KEBM/review"
-        class="review-button"
-        target="_blank"
-      >
+      <a href="https://g.page/r/CW2knUW1ff0KEBM/review" class="review-button" target="_blank">
         ⭐ Please Review Us on Google
       </a>
     </div>
   </section>
 </body>
 </html>
+```
