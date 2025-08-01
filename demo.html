@@ -8,14 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet" />
   <style>
     /* ───────────────────────────────────────────────────────────
-       BASE & BACKGROUND WITH DENser TEXTURE
+       BASE & BACKGROUND WITH DENSE TEXTURE
     ─────────────────────────────────────────────────────────── */
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       color: #002147;
       background-image:
-        /* 1) Denser GSLT pattern (120×120px tiles) */
+        /* 1) Denser GSLT pattern */
         url("data:image/svg+xml;charset=UTF-8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'>\
   <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
@@ -33,7 +33,7 @@
       overflow-x: hidden;
     }
 
-    /* On mobile: drop the cover photo, keep only the GSLT texture */
+    /* On mobile: drop the cover photo, keep only the denser GSLT texture */
     @media screen and (max-width: 768px) {
       body {
         background-image: url("data:image/svg+xml;charset=UTF-8,\
@@ -51,15 +51,15 @@
     }
 
     /* ───────────────────────────────────────────────────────────
-       HEADER & LOGOS (banner removed)
+       HEADER & LOGOS (no white background)
     ─────────────────────────────────────────────────────────── */
     header {
-      padding: 1rem 0;
       position: relative;
       z-index: 1;
+      padding: 1rem 0;
+      text-align: center;
     }
-    .logo,
-    .logo-right {
+    .logo, .logo-right {
       position: absolute;
       top: 10px;
       max-width: 150px;
@@ -69,12 +69,12 @@
     .logo-right { right: 10px; }
 
     /* ───────────────────────────────────────────────────────────
-       HERO (only this block centered)
+       HERO (only this block centered, transparent background)
     ─────────────────────────────────────────────────────────── */
     .hero {
       text-align: center;
       padding: 10vh 1rem 4vh;
-      background-color: rgba(255,255,255,0.85);
+      background-color: transparent;
       position: relative;
       z-index: 1;
     }
