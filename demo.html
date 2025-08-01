@@ -11,13 +11,32 @@
   <meta name="keywords" content="CPA services, corporate tax filing, individual tax returns, bookkeeping, payroll, GST/HST registration, tax planning, business advisory">
 
   <style>
+    /* Desktop background image */
     body {
       font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
       color: #333;
       margin: 0;
       padding: 20px;
       text-align: center;
+      background-image: url('Images/Background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Remove background image on mobile */
+    @media (max-width: 768px) {
+      body {
+        background-image: none;
+      }
+    }
+
+    /* Textured text effect */
+    .textured-text {
+      background: url('Images/TextTexture.png') repeat;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     h1 {
@@ -44,15 +63,15 @@
     }
 
     .service-box {
-      background: #e6f0ff;
+      background: rgba(230, 240, 255, 0.85);
       padding: 15px;
       border-radius: 5px;
       margin: 15px 0;
     }
 
     .back-link {
-      display: block;
-      margin-top: 20px;
+      display: inline-block;
+      margin: 15px 10px 0;
       font-size: 18px;
       color: #004080;
       text-decoration: none;
@@ -76,7 +95,7 @@
     <img src="Images/GSLTLogo.png" alt="GSLT Logo" class="logo" />
   </a>
 
-  <h1>Our Services</h1>
+  <h1 class="textured-text">Our Services</h1>
   <p>At GSLT Tax and Accounting, we offer expert tax and financial services tailored to meet the unique needs of businesses and individuals across Canada.</p>
 
   <div class="services-container">
@@ -120,8 +139,9 @@
 
   <p>📍 <strong>Based in Toronto, serving clients nationwide.</strong> Contact us for personalized solutions.</p>
 
-  <!-- Back link updated to full website URL -->
+  <!-- Navigation links -->
   <a href="https://www.gslttax.com" class="back-link">⬅ Back to Home</a>
+  <a href="https://www.gslttax.com/request-appointment.html" class="back-link">📅 Request an Appointment</a>
 
 </body>
 </html>
