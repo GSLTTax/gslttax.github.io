@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GSLT Tax and Accounting</title>
   <link rel="icon" href="Images/GSLTLogo.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap"
+    rel="stylesheet"
+  />
   <style>
     /* ───────────────────────────────────────────────────────────
        BASE & BACKGROUND WITH DENSE TEXTURE
@@ -15,13 +18,13 @@
       font-family: 'Inter', sans-serif;
       color: #002147;
       background-image:
-        /* 1) Denser GSLT pattern */
+        /* 1) Denser GSLT pattern with trailing space */
         url("data:image/svg+xml;charset=UTF-8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'>\
-  <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
-  <text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
-  <text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
-  <text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
+  <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
 </svg>"),
         /* 2) Desktop cover image */
         url('Images/Cover page4.png');
@@ -33,15 +36,15 @@
       overflow-x: hidden;
     }
 
-    /* On mobile: drop the cover photo, keep only the denser GSLT texture */
+    /* Mobile: only the denser GSLT pattern with trailing space */
     @media screen and (max-width: 768px) {
       body {
         background-image: url("data:image/svg+xml;charset=UTF-8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'>\
-  <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
-  <text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
-  <text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
-  <text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
+  <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
 </svg>");
         background-repeat: repeat;
         background-size: auto;
@@ -51,7 +54,7 @@
     }
 
     /* ───────────────────────────────────────────────────────────
-       HEADER & LOGOS (no white background)
+       HEADER & LOGOS (transparent)
     ─────────────────────────────────────────────────────────── */
     header {
       position: relative;
@@ -59,17 +62,22 @@
       padding: 1rem 0;
       text-align: center;
     }
-    .logo, .logo-right {
+    .logo,
+    .logo-right {
       position: absolute;
       top: 10px;
       max-width: 150px;
       width: 25%;
     }
-    .logo { left: 10px; }
-    .logo-right { right: 10px; }
+    .logo {
+      left: 10px;
+    }
+    .logo-right {
+      right: 10px;
+    }
 
     /* ───────────────────────────────────────────────────────────
-       HERO (only this block centered, transparent background)
+       HERO
     ─────────────────────────────────────────────────────────── */
     .hero {
       text-align: center;
@@ -109,15 +117,15 @@
     }
 
     /* ───────────────────────────────────────────────────────────
-       CONTENT SECTIONS (left-aligned)
+       CONTENT SECTIONS
     ─────────────────────────────────────────────────────────── */
     .content {
       max-width: 800px;
       margin: 2rem auto;
       padding: 2rem 1rem;
-      background-color: rgba(255,255,255,0.92);
+      background-color: rgba(255, 255, 255, 0.92);
       border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
       position: relative;
       z-index: 1;
       text-align: left;
@@ -141,7 +149,7 @@
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: background-color 0.3s ease;
       margin-top: 2rem;
     }
@@ -150,11 +158,18 @@
     }
   </style>
 </head>
-
 <body>
   <header>
-    <img src="Images/CPA logo1.png" alt="CPA Logo" class="logo" />
-    <img src="Images/canada logo.png" alt="Canada Logo" class="logo-right" />
+    <img
+      src="Images/CPA logo1.png"
+      alt="CPA Logo"
+      class="logo"
+    />
+    <img
+      src="Images/canada logo.png"
+      alt="Canada Logo"
+      class="logo-right"
+    />
   </header>
 
   <section class="hero">
@@ -162,39 +177,71 @@
     <h2>George Mathew, CPA, CGA</h2>
     <h3>Chartered Professional Accountant</h3>
     <div class="contact-center">
-      <p>📧 <a href="mailto:georgemathew@gslttax.com">georgemathew@gslttax.com</a></p>
+      <p>
+        📧
+        <a href="mailto:georgemathew@gslttax.com">
+          georgemathew@gslttax.com
+        </a>
+      </p>
       <p>📞 +1 (416) 871-9829</p>
-      <p>📅 <a href="https://forms.gle/s65oTucdAP37JR678" target="_blank">Book an Appointment</a></p>
+      <p>
+        📅
+        <a
+          href="https://forms.gle/s65oTucdAP37JR678"
+          target="_blank"
+        >
+          Book an Appointment
+        </a>
+      </p>
     </div>
   </section>
 
   <section class="content">
     <h4>About Us</h4>
-    <p>GSLT Tax and Accounting is a professional CPA firm dedicated to helping individuals and businesses navigate the complexities of tax and financial compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two decades of expertise and personalized service to every client.</p>
-    <p>Whether you're a small business, a growing corporation, or an individual looking for trustworthy tax assistance, we provide tailored solutions to meet your needs.</p>
+    <p>
+      GSLT Tax and Accounting is a professional CPA firm dedicated to helping
+      individuals and businesses navigate the complexities of tax and financial
+      compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two
+      decades of expertise and personalized service to every client.
+    </p>
+    <p>
+      Whether you're a small business, a growing corporation, or an individual
+      looking for trustworthy tax assistance, we provide tailored solutions to
+      meet your needs.
+    </p>
 
     <h4>Our Services</h4>
-    <p>▪️ T2 Corporate Tax Filing<br />
-       ▪️ T1 Individual Tax Returns<br />
-       ▪️ GST/HST Registration and Filing<br />
-       ▪️ Bookkeeping and Financial Statements<br />
-       ▪️ Payroll Setup and Remittance<br />
-       ▪️ Tax Planning and Advisory<br />
-       ▪️ New Business Setup Support
+    <p>
+      ▪️ T2 Corporate Tax Filing<br />
+      ▪️ T1 Individual Tax Returns<br />
+      ▪️ GST/HST Registration and Filing<br />
+      ▪️ Bookkeeping and Financial Statements<br />
+      ▪️ Payroll Setup and Remittance<br />
+      ▪️ Tax Planning and Advisory<br />
+      ▪️ New Business Setup Support
     </p>
-    <p><a href="services.html">🔍 View Our Full Services Here</a></p>
+    <p>
+      <a href="services.html">🔍 View Our Full Services Here</a>
+    </p>
 
     <h4>Why Choose GSLT?</h4>
-    <p>✅ Experienced CPA with a focus on client success<br />
-       ✅ Affordable and transparent pricing<br />
-       ✅ Timely and responsive communication<br />
-       ✅ Compliance-focused and detail-oriented<br />
-       ✅ Serving both local and remote clients across Canada
+    <p>
+      ✅ Experienced CPA with a focus on client success<br />
+      ✅ Affordable and transparent pricing<br />
+      ✅ Timely and responsive communication<br />
+      ✅ Compliance-focused and detail-oriented<br />
+      ✅ Serving both local and remote clients across Canada
     </p>
-    <p>📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
+    <p>
+      📍 Based in Toronto, Ontario, proudly serving clients nationwide.
+    </p>
 
     <div>
-      <a href="https://g.page/r/CW2knUW1ff0KEBM/review" class="review-button" target="_blank">
+      <a
+        href="https://g.page/r/CW2knUW1ff0KEBM/review"
+        class="review-button"
+        target="_blank"
+      >
         ⭐ Please Review Us on Google
       </a>
     </div>
