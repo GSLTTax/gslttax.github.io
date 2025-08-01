@@ -54,22 +54,22 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
     header {
       padding: 1rem 0;
       background-color: rgba(255,255,255,0.95);
-      text-align: center;
       position: relative;
       z-index: 1;
     }
 
     .logo,
     .logo-right {
-      display: inline-block;
-      vertical-align: middle;
+      position: absolute;
+      top: 10px;
       max-width: 150px;
       width: 25%;
-      margin: 0 1rem;
     }
+    .logo { left: 10px; }
+    .logo-right { right: 10px; }
 
     /* ───────────────────────────────────────────────────────────
-       HERO
+       HERO (ONLY THIS BLOCK IS CENTERED)
     ─────────────────────────────────────────────────────────── */
     .hero {
       text-align: center;
@@ -78,7 +78,6 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
       position: relative;
       z-index: 1;
     }
-
     .hero h1 {
       font-size: clamp(2rem, 6vw, 4rem);
       color: #003366;
@@ -95,6 +94,11 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
       margin-bottom: 1.5rem;
     }
 
+    .contact-center {
+      margin: 0 auto;
+      display: inline-block;
+      text-align: center;
+    }
     .contact-center p {
       font-size: clamp(1rem, 2.5vw, 1.25rem);
       margin: 0.5rem 0;
@@ -106,7 +110,7 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
     }
 
     /* ───────────────────────────────────────────────────────────
-       CONTENT SECTIONS
+       CONTENT SECTIONS (LEFT-ALIGNED)
     ─────────────────────────────────────────────────────────── */
     .content {
       max-width: 800px;
@@ -117,9 +121,8 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
       position: relative;
       z-index: 1;
-      text-align: center;
+      text-align: left;
     }
-
     .content h4 {
       font-size: clamp(1.25rem, 3vw, 2rem);
       color: #004080;
@@ -191,9 +194,9 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
        ✅ Serving both local and remote clients across Canada
     </p>
     <p>📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
+
     <div>
-      <a href="https://g.page/r/CW2knUW1ff0KEBM/review"
-         class="review-button" target="_blank">
+      <a href="https://g.page/r/CW2knUW1ff0KEBM/review" class="review-button" target="_blank">
         ⭐ Please Review Us on Google
       </a>
     </div>
