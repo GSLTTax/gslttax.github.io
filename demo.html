@@ -11,22 +11,22 @@
   />
   <style>
     /* ───────────────────────────────────────────────────────────
-       BASE & BACKGROUND WITH DENSE TEXTURE
+       BASE & BACKGROUND WITH DENSE TEXTURE (tightened)
     ─────────────────────────────────────────────────────────── */
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       color: #002147;
       background-image:
-        /* 1) Denser GSLT pattern with 4× “GSLT ” */
+        /* Denser GSLT pattern, 4× “GSLT ” per 100px tile */
         url("data:image/svg+xml;charset=UTF-8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'>\
+<svg xmlns='http://www.w3.org/2000/svg' width='100' height='120'>\
   <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20</text>\
   <text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20</text>\
   <text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20</text>\
   <text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20</text>\
 </svg>"),
-        /* 2) Desktop cover image */
+        /* Desktop cover image */
         url('Images/Cover page4.png');
       background-repeat: repeat, no-repeat;
       background-size: auto, cover;
@@ -36,11 +36,11 @@
       overflow-x: hidden;
     }
 
-    /* Mobile: only the denser GSLT pattern */
+    /* Mobile: just the tightened GSLT pattern */
     @media screen and (max-width: 768px) {
       body {
         background-image: url("data:image/svg+xml;charset=UTF-8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'>\
+<svg xmlns='http://www.w3.org/2000/svg' width='100' height='120'>\
   <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20</text>\
   <text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20</text>\
   <text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20</text>\
@@ -54,7 +54,7 @@
     }
 
     /* ───────────────────────────────────────────────────────────
-       HEADER & LOGOS (transparent)
+       HEADER, HERO & CONTENT STYLES (unchanged)
     ─────────────────────────────────────────────────────────── */
     header {
       position: relative;
@@ -62,23 +62,15 @@
       padding: 1rem 0;
       text-align: center;
     }
-    .logo,
-    .logo-right {
+    .logo, .logo-right {
       position: absolute;
       top: 10px;
       max-width: 150px;
       width: 25%;
     }
-    .logo {
-      left: 10px;
-    }
-    .logo-right {
-      right: 10px;
-    }
+    .logo { left: 10px; }
+    .logo-right { right: 10px; }
 
-    /* ───────────────────────────────────────────────────────────
-       HERO
-    ─────────────────────────────────────────────────────────── */
     .hero {
       text-align: center;
       padding: 10vh 1rem 4vh;
@@ -86,76 +78,40 @@
       position: relative;
       z-index: 1;
     }
-    .hero h1 {
-      font-size: clamp(2rem, 6vw, 4rem);
-      color: #003366;
-      margin-bottom: 0.5rem;
-    }
-    .hero h2 {
-      font-size: clamp(1.5rem, 4vw, 3rem);
-      color: #005599;
-      margin-bottom: 0.5rem;
-    }
-    .hero h3 {
-      font-size: clamp(1.25rem, 3vw, 2rem);
-      color: #0077aa;
-      margin-bottom: 1.5rem;
-    }
-    .contact-center {
-      display: inline-block;
-      text-align: center;
-      margin: 0 auto;
-    }
-    .contact-center p {
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-      margin: 0.5rem 0;
-    }
-    .contact-center a {
-      color: #003366;
-      font-weight: 600;
-      text-decoration: none;
-    }
+    .hero h1 { font-size: clamp(2rem, 6vw, 4rem); color: #003366; margin-bottom: .5rem; }
+    .hero h2 { font-size: clamp(1.5rem, 4vw, 3rem); color: #005599; margin-bottom: .5rem; }
+    .hero h3 { font-size: clamp(1.25rem, 3vw, 2rem); color: #0077aa; margin-bottom: 1.5rem; }
+    .contact-center { display: inline-block; }
+    .contact-center p { font-size: clamp(1rem, 2.5vw, 1.25rem); margin: .5rem 0; }
+    .contact-center a { color: #003366; font-weight: 600; text-decoration: none; }
 
-    /* ───────────────────────────────────────────────────────────
-       CONTENT SECTIONS
-    ─────────────────────────────────────────────────────────── */
     .content {
       max-width: 800px;
       margin: 2rem auto;
       padding: 2rem 1rem;
-      background-color: rgba(255, 255, 255, 0.92);
+      background-color: rgba(255,255,255,.92);
       border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 24px rgba(0,0,0,.1);
       position: relative;
       z-index: 1;
       text-align: left;
     }
-    .content h4 {
-      font-size: clamp(1.25rem, 3vw, 2rem);
-      color: #004080;
-      margin-top: 2rem;
-    }
-    .content p {
-      font-size: clamp(1rem, 2vw, 1.5rem);
-      line-height: 1.6;
-      margin: 1rem 0;
-    }
+    .content h4 { font-size: clamp(1.25rem,3vw,2rem); color: #004080; margin-top: 2rem; }
+    .content p { font-size: clamp(1rem,2vw,1.5rem); line-height: 1.6; margin: 1rem 0; }
     .review-button {
       display: inline-block;
       background-color: #1c87c9;
       color: #fff;
-      padding: 0.75rem 1.5rem;
-      font-size: clamp(1rem, 2vw, 1.25rem);
+      padding: .75rem 1.5rem;
+      font-size: clamp(1rem,2vw,1.25rem);
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,.1);
+      transition: background-color .3s ease;
       margin-top: 2rem;
     }
-    .review-button:hover {
-      background-color: #145f8c;
-    }
+    .review-button:hover { background-color: #145f8c; }
   </style>
 </head>
 <body>
@@ -199,9 +155,7 @@
       ▪️ Tax Planning and Advisory<br />
       ▪️ New Business Setup Support
     </p>
-    <p>
-      <a href="services.html">🔍 View Our Full Services Here</a>
-    </p>
+    <p><a href="services.html">🔍 View Our Full Services Here</a></p>
 
     <h4>Why Choose GSLT?</h4>
     <p>
