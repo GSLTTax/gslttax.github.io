@@ -8,19 +8,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet" />
   <style>
     /* ───────────────────────────────────────────────────────────
-       BASE & BACKGROUND
+       BASE & BACKGROUND WITH DENser TEXTURE
     ─────────────────────────────────────────────────────────── */
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       color: #002147;
       background-image:
-        /* 1) Tiny GSLT text pattern */
+        /* 1) Denser GSLT pattern (120×120px tiles) */
         url("data:image/svg+xml;charset=UTF-8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150'>\
-  <text x='0' y='12' font-size='12' fill='%23002147' opacity='0.05'>\
-GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
-  </text>\
+<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'>\
+  <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
+  <text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
+  <text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
+  <text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
 </svg>"),
         /* 2) Desktop cover image */
         url('Images/Cover page4.png');
@@ -32,14 +33,15 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
       overflow-x: hidden;
     }
 
-    /* Remove cover image on mobile, keep only GSLT texture */
+    /* On mobile: drop the cover photo, keep only the GSLT texture */
     @media screen and (max-width: 768px) {
       body {
         background-image: url("data:image/svg+xml;charset=UTF-8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150'>\
-  <text x='0' y='12' font-size='12' fill='%23002147' opacity='0.05'>\
-GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
-  </text>\
+<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'>\
+  <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
+  <text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
+  <text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
+  <text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT</text>\
 </svg>");
         background-repeat: repeat;
         background-size: auto;
@@ -49,7 +51,7 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
     }
 
     /* ───────────────────────────────────────────────────────────
-       HEADER & LOGOS
+       HEADER & LOGOS (unchanged)
     ─────────────────────────────────────────────────────────── */
     header {
       padding: 1rem 0;
@@ -57,9 +59,7 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
       position: relative;
       z-index: 1;
     }
-
-    .logo,
-    .logo-right {
+    .logo, .logo-right {
       position: absolute;
       top: 10px;
       max-width: 150px;
@@ -69,7 +69,7 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
     .logo-right { right: 10px; }
 
     /* ───────────────────────────────────────────────────────────
-       HERO (ONLY THIS BLOCK IS CENTERED)
+       HERO (only this block centered)
     ─────────────────────────────────────────────────────────── */
     .hero {
       text-align: center;
@@ -93,11 +93,10 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
       color: #0077aa;
       margin-bottom: 1.5rem;
     }
-
     .contact-center {
-      margin: 0 auto;
       display: inline-block;
       text-align: center;
+      margin: 0 auto;
     }
     .contact-center p {
       font-size: clamp(1rem, 2.5vw, 1.25rem);
@@ -110,7 +109,7 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
     }
 
     /* ───────────────────────────────────────────────────────────
-       CONTENT SECTIONS (LEFT-ALIGNED)
+       CONTENT SECTIONS (left-aligned)
     ─────────────────────────────────────────────────────────── */
     .content {
       max-width: 800px;
@@ -133,7 +132,6 @@ GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT\
       line-height: 1.6;
       margin: 1rem 0;
     }
-
     .review-button {
       display: inline-block;
       background-color: #1c87c9;
