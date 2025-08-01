@@ -1,228 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
-    <title>GSLT Tax and Accounting</title>
-    <link rel="icon" href="Images/GSLTLogo.png" type="image/png"> <!-- Favicon -->
-    <style>
-        /* Base Styles for Desktop */
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('Images/Cover page4.png'); /* Desktop Background */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: absolute;
-            color: darkblue;
-            margin: 5vw;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GSLT Tax and Accounting</title>
+  <link rel="icon" href="Images/GSLTLogo.png" type="image/png" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* ───────────────────────────────────────────────────────────
+       BASE & BACKGROUND WITH ULTRA-DENSE TEXTURE
+    ─────────────────────────────────────────────────────────── */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #002147;
+      background-image:
+        /* 1) Denser GSLT pattern: 6× “GSLT ” per 120px tile */
+        url("data:image/svg+xml;charset=UTF-8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'>\
+  <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+</svg>"),
+        /* 2) Desktop cover image */
+        url('Images/Cover page4.png');
+      background-repeat: repeat, no-repeat;
+      background-size: auto, cover;
+      background-position: top left, center;
+      background-attachment: scroll, fixed;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-        h1 {
-            font-size: 50px;
-            margin-bottom: 24px;
-        }
+    /* On mobile: drop the cover photo, keep only the dense GSLT tile */
+    @media screen and (max-width: 768px) {
+      body {
+        background-image: url("data:image/svg+xml;charset=UTF-8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'>\
+  <text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+  <text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20GSLT%20</text>\
+</svg>");
+        background-repeat: repeat;
+        background-size: auto;
+        background-position: top left;
+        background-attachment: scroll;
+      }
+    }
 
-        h2 {
-            font-size: 40px;
-            margin-top: 5px;
-        }
+    /* ───────────────────────────────────────────────────────────
+       HEADER & LOGOS (transparent)
+    ─────────────────────────────────────────────────────────── */
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .logo,
+    .logo-right {
+      position: absolute;
+      top: 10px;
+      max-width: 150px;
+      width: 25%;
+    }
+    .logo {
+      left: 10px;
+    }
+    .logo-right {
+      right: 10px;
+    }
 
-        h3 {
-            font-size: 32px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
+    /* ───────────────────────────────────────────────────────────
+       HERO
+    ─────────────────────────────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 10vh 1rem 4vh;
+      background-color: transparent;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 4rem);
+      color: #003366;
+      margin-bottom: 0.5rem;
+    }
+    .hero h2 {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      color: #005599;
+      margin-bottom: 0.5rem;
+    }
+    .hero h3 {
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      color: #0077aa;
+      margin-bottom: 1.5rem;
+    }
+    .contact-center {
+      display: inline-block;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .contact-center p {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      margin: 0.5rem 0;
+    }
+    .contact-center a {
+      color: #003366;
+      font-weight: 600;
+      text-decoration: none;
+    }
 
-        h4 {
-            font-size: 30px;
-            margin-top: 20px;
-            margin-bottom: 25px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.5;
-            text-align: justify;
-        }
-
-        /* Centered Header Content */
-        .header-content {
-            text-align: center; /* Ensures all elements are fully centered */
-            width: 100%;
-            margin: auto;
-        }
-
-        .header-content p {
-            text-align: center; /* Ensures Email & Phone are centered */
-            font-size: 18px;
-        }
-
-        /* Logo Styling */
-        .logo {
-            width: 50%;
-            max-width: 200px;
-            position: absolute;
-            top: 10px;
-            left: 10px; /* Ensures the logo stays fully left-aligned */
-            display: block;
-        }
-
-        /* Adjusted Canada Logo Styling for Desktop */
-        .logo-right {
-            width: 18%;
-            max-width: 200px;
-            position: absolute;
-            top: 10px;
-            right: 100px; /* Slightly moved left */
-            display: block;
-        }
-
-        /* Left-Aligned Main Content */
-        .content {
-            width: 80%;
-            max-width: 900px;
-            margin-left: 0;
-            margin-right: auto;
-        }
-
-        /* Mobile-Friendly Adjustments */
-        @media (max-width: 768px) {
-            body {
-                background-image: url('Images/CoverPageMobile.png'); /* Mobile Background */
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: scroll;
-                margin: 3vw;
-                align-items: flex-start; /* Left-align content */
-            }
-
-            .header-content {
-                text-align: center; /* Ensures header elements align center */
-            }
-
-            .header-content p {
-                text-align: center; /* Ensures Email & Phone stay centered on mobile */
-                font-size: 16px;
-            }
-
-            .content {
-                width: 90%;
-                text-align: justify; /* Justifies content */
-            }
-
-            p {
-                font-size: 16px;
-                line-height: 1.5;
-                text-align: justify;
-            }
-
-            /* Adjusted Logo Styling for Mobile */
-            .logo {
-                position: absolute; /* Keeps it positioned */
-                top: 10px;
-                left: 10px; /* Ensures it is fully left-aligned */
-                display: block;
-                width: 50%;
-                max-width: 150px;
-            }
-
-            /* Adjusted Canada Logo Styling for Mobile */
-            .logo-right {
-                position: absolute;
-                top: 10px;
-                right: 5px; /* Kept fully right-aligned */
-                display: block;
-                width: 25%; /* Kept larger for mobile */
-                max-width: 150px;
-            }
-
-            /* Reduced Heading Sizes for Mobile */
-            h1 {
-                font-size: 32px; /* Smaller size on mobile */
-                margin-top: 80px;
-            }
-
-            h2 {
-                font-size: 26px;
-            }
-
-            h3 {
-                font-size: 22px;
-            }
-        }
-    </style>
+    /* ───────────────────────────────────────────────────────────
+       CONTENT SECTIONS
+    ─────────────────────────────────────────────────────────── */
+    .content {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem 1rem;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+      text-align: left;
+    }
+    .content h4 {
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      color: #004080;
+      margin-top: 2rem;
+    }
+    .content p {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      line-height: 1.6;
+      margin: 1rem 0;
+    }
+    .review-button {
+      display: inline-block;
+      background-color: #1c87c9;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      margin-top: 2rem;
+    }
+    .review-button:hover {
+      background-color: #145f8c;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="Images/CPA logo1.png" alt="CPA Logo" class="logo">
-        <img src="Images/canada logo.png" alt="Canada Logo" class="logo-right">
-    </header>
+  <header>
+    <img src="Images/CPA logo1.png" alt="CPA Logo" class="logo" />
+    <img src="Images/canada logo.png" alt="Canada Logo" class="logo-right" />
+  </header>
 
-    <!-- Centered Header Content -->
-    <div class="header-content">
-        <h1>GSLT Tax and Accounting</h1>
-        <h2>George Mathew, CPA, CGA</h2>
-        <h3>Chartered Professional Accountant</h3>
-        <p>📧 Email: <a href="mailto:georgemathew@gslttax.com">georgemathew@gslttax.com</a></p>
-        <p>📞 Phone: +1 (416) 871-9829</p>
-        <p><a href="https://forms.gle/s65oTucdAP37JR678" target="_blank" style="font-weight: bold; color: darkblue;">📅 Book an Appointment</a></p>
+  <section class="hero">
+    <h1>GSLT Tax and Accounting</h1>
+    <h2>George Mathew, CPA, CGA</h2>
+    <h3>Chartered Professional Accountant</h3>
+    <div class="contact-center">
+      <p>📧 <a href="mailto:georgemathew@gslttax.com">georgemathew@gslttax.com</a></p>
+      <p>📞 +1 (416) 871-9829</p>
+      <p>📅 <a href="https://forms.gle/s65oTucdAP37JR678" target="_blank">Book an Appointment</a></p>
     </div>
+  </section>
 
-    <!-- Left-Aligned Content -->
-    <div class="content">
-        <h4>About Us</h4>
-        <p>GSLT Tax and Accounting is a professional CPA firm dedicated to helping individuals and businesses navigate the complexities of tax and financial compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two decades of expertise and personalized service to every client.</p>
+  <section class="content">
+    <h4>About Us</h4>
+    <p>
+      GSLT Tax and Accounting is a professional CPA firm dedicated to helping
+      individuals and businesses navigate the complexities of tax and financial
+      compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two
+      decades of expertise and personalized service to every client.
+    </p>
+    <p>
+      Whether you're a small business, a growing corporation, or an individual
+      looking for trustworthy tax assistance, we provide tailored solutions to
+      meet your needs.
+    </p>
 
-        <p>Whether you're a small business, a growing corporation, or an individual looking for trustworthy tax assistance, we provide tailored solutions to meet your needs.</p>
+    <h4>Our Services</h4>
+    <p>
+      ▪️ T2 Corporate Tax Filing<br />
+      ▪️ T1 Individual Tax Returns<br />
+      ▪️ GST/HST Registration and Filing<br />
+      ▪️ Bookkeeping and Financial Statements<br />
+      ▪️ Payroll Setup and Remittance<br />
+      ▪️ Tax Planning and Advisory<br />
+      ▪️ New Business Setup Support
+    </p>
+    <p><a href="services.html">🔍 View Our Full Services Here</a></p>
 
-        <h4>Our Services</h4>
-        <p>▪️ T2 Corporate Tax Filing</p>
-        <p>▪️ T1 Individual Tax Returns</p>
-        <p>▪️ GST/HST Registration and Filing</p>
-        <p>▪️ Bookkeeping and Financial Statements</p>
-        <p>▪️ Payroll Setup and Remittance</p>
-        <p>▪️ Tax Planning and Advisory</p>
-        <p>▪️ New Business Setup Support</p>
+    <h4>Why Choose GSLT?</h4>
+    <p>
+      ✅ Experienced CPA with a focus on client success<br />
+      ✅ Affordable and transparent pricing<br />
+      ✅ Timely and responsive communication<br />
+      ✅ Compliance-focused and detail-oriented<br />
+      ✅ Serving both local and remote clients across Canada
+    </p>
+    <p>📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
 
-        <!-- Clickable Link to Services Page -->
-        <p><a href="services.html">View Our Full Services Here</a></p>
-
-        <h4>Why Choose GSLT?</h4>
-        <p>✅ Experienced CPA with a focus on client success</p>
-        <p>✅ Affordable and transparent pricing</p>
-        <p>✅ Timely and responsive communication</p>
-        <p>✅ Compliance-focused and detail-oriented</p>
-        <p>✅ Serving both local and remote clients across Canada</p>
-
-        <br>
-        <p>📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
-
-        <br>
-        <p>For inquiries or consultations, feel free to reach out to us via email or phone.</p>
-
-        <br>
-<div style="text-align: center; margin-top: 20px;">
-    <a href="https://g.page/r/CW2knUW1ff0KEBM/review" target="_blank" style="
-        display: inline-block;
-        background-color: #1c87c9;
-        color: white;
-        padding: 12px 24px;
-        font-size: 18px;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: bold;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: background-color 0.3s ease;
-    " onmouseover="this.style.backgroundColor='#145f8c'" onmouseout="this.style.backgroundColor='#1c87c9'">
+    <div>
+      <a href="https://g.page/r/CW2knUW1ff0KEBM/review" class="review-button" target="_blank">
         ⭐ Please Review Us on Google
-    </a>
-</div>
+      </a>
     </div>
+  </section>
 </body>
 </html>
+```
