@@ -11,36 +11,47 @@
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      position: relative; /* Enables ::before layering */
       background-image: url('Images/Cover page4.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
       color: #002147;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    /* GSLT subtle texture overlay */
-    body::before {
-      content: "GSLT GSLT GSLT GSLT GSLT GSLT GSLT GSLT ";
-      font-size: 8px;
-      opacity: 0.05;
-      white-space: nowrap;
+    /* GSLT texture layer — behind everything */
+    #texture {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -9999;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    #texture::before {
+      content: "GSLT GSLT GSLT GSLT GSLT GSLT GSLT GSLT GSLT GSLT ";
       position: absolute;
       top: -50%;
       left: -50%;
       width: 200%;
       height: 200%;
       transform: rotate(-30deg);
-      z-index: 0;
+      font-size: 8px;
+      white-space: nowrap;
+      opacity: 0.04;
       color: #000;
-      pointer-events: none;
     }
 
     header {
-      position: relative;
       padding: 20px;
       background-color: rgba(255, 255, 255, 0.95);
+      position: relative;
       z-index: 1;
     }
 
@@ -50,7 +61,6 @@
       left: 10px;
       max-width: 200px;
       width: 50%;
-      display: block;
     }
 
     .logo-right {
@@ -59,15 +69,14 @@
       right: 100px;
       max-width: 200px;
       width: 18%;
-      display: block;
     }
 
     .hero {
       text-align: center;
       padding: 120px 20px 40px;
       background-color: rgba(255, 255, 255, 0.85);
-      z-index: 1;
       position: relative;
+      z-index: 1;
     }
 
     .hero h1 {
@@ -112,8 +121,8 @@
       background-color: rgba(255, 255, 255, 0.92);
       border-radius: 10px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      z-index: 1;
       position: relative;
+      z-index: 1;
     }
 
     h4 {
@@ -149,9 +158,6 @@
     @media screen and (max-width: 768px) {
       body {
         background-image: url('Images/CoverPageMobile.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
         background-attachment: scroll;
       }
 
@@ -174,6 +180,7 @@
   </style>
 </head>
 <body>
+  <div id="texture"></div>
 
   <header>
     <img src="Images/CPA logo1.png" alt="CPA Logo" class="logo">
