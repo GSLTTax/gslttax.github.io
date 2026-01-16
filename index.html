@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - GSLT Tax and Accounting</title>
+  <link rel="icon" href="/Images/GSLTLogo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #002147;
+      background-image:
+        url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT GSLT GSLT GSLT GSLT GSLT</text><text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT GSLT GSLT GSLT GSLT GSLT</text><text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT GSLT GSLT GSLT GSLT GSLT</text><text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT GSLT GSLT GSLT GSLT GSLT</text></svg>"),
+        url('/Images/Cover page4.png');
+      background-repeat: repeat, no-repeat;
+      background-size: auto, cover;
+      background-position: top left, center;
+      background-attachment: scroll, fixed;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 9999;
+      backdrop-filter: blur(6px);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .header-left img {
+      height: 50px;
+      width: auto;
+    }
+
+    .header-center {
+      flex: 1 1 auto;
+      max-width: 500px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .header-center img {
+      height: 45px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .header-center span {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #002147;
+      white-space: nowrap;
+    }
+
+    .nav-tabs {
+      flex: 0 0 auto;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-tabs a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #003366;
+      padding: 6px 10px;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-tabs a:hover,
+    .nav-tabs a.active {
+      color: #0077aa;
+      border-bottom: 2px solid #0077aa;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 32px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      margin-left: auto;
+    }
+
+    @media (max-width: 768px) {
+      .header-center img {
+        height: 35px;
+      }
+      .header-center span {
+        font-size: 1.1rem;
+      }
+
+      .nav-tabs {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        padding: 10px 0;
+        border-top: 1px solid #ccc;
+      }
+
+      .nav-tabs.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .header-inner {
+        justify-content: space-between;
+      }
+    }
+
+    .page-offset {
+      margin-top: 120px;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem 1rem;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .content h4 {
+      font-size: 1.8rem;
+      color: #004080;
+      margin-top: 2rem;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .review-button {
+      display: inline-block;
+      background-color: #1c87c9;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .review-button:hover {
+      background-color: #145f8c;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="fixed-header">
+    <div class="header-inner">
+
+      <div class="header-left">
+        <img src="/Images/CPA logo1.png" alt="CPA Logo">
+      </div>
+
+      <div class="header-center">
+        <img src="/Images/GSLTLogo.png" alt="GSLT Logo">
+        <span>GSLT Tax and Accounting</span>
+      </div>
+
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+      <div class="nav-tabs" id="navMenu">
+        <a href="/" class="active">Home</a>
+        <a href="/about/">About</a>
+        <a href="/services/">Services</a>
+        <a href="/industries/">Industries</a>
+        <a href="/contact/">Contact</a>
+        <a href="/blog/">Blog</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="page-offset"></div>
+
+  <section class="content">
+
+    <h4>About Us</h4>
+    <p>
+      GSLT Tax and Accounting is a professional CPA firm dedicated to helping
+      individuals and businesses navigate the complexities of tax and financial
+      compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two
+      decades of expertise and personalized service to every client.
+    </p>
+    <p>
+      Whether you're a small business, a growing corporation, or an individual
+      looking for trustworthy tax assistance, we provide tailored solutions to
+      meet your needs.
+    </p>
+
+    <h4>Our Services</h4>
+    <p>
+      ▪️ T2 Corporate Tax Filing<br>
+      ▪️ T1 Individual Tax Returns<br>
+      ▪️ GST/HST Registration and Filing<br>
+      ▪️ Bookkeeping and Financial Statements<br>
+      ▪️ Payroll Setup and Remittance<br>
+      ▪️ Tax Planning and Advisory<br>
+      ▪️ New Business Setup Support
+    </p>
+
+    <p><a href="/services/">🔍 View Our Full Services Here</a></p>
+
+    <h4>Why Choose GSLT?</h4>
+    <p>
+      ✅ Experienced CPA with a focus on client success<br>
+      ✅ Affordable and transparent pricing<br>
+      ✅ Timely and responsive communication<br>
+      ✅ Compliance-focused and detail-oriented<br>
+      ✅ Serving both local and remote clients across Canada
+    </p>
+
+    <p>📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
+
+    <div>
+      <a href="https://g.page/r/CW2knUW1ff0KEBM/review" class="review-button" target="_blank">
+        ⭐ Please Review Us on Google
+      </a>
+    </div>
+
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
