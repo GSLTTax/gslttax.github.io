@@ -250,19 +250,123 @@
 
     <p>📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
 
-    <div>
-      <a href="https://g.page/r/CW2knUW1ff0KEBM/review" class="review-button" target="_blank">
-        ⭐ Please Review Us on Google
-      </a>
-    </div>
+<section>
 
-  </section>
+  <!-- Combined Rating + Button -->
+  <div class="google-review-box">
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("navMenu").classList.toggle("show");
-    }
-  </script>
+    <div class="review-title">Please Review Us on Google</div>
+
+    <div class="review-stars" id="ratingStars"></div>
+
+    <div class="review-score">
+      <span id="ratingValue">5.0</span> (<span id="ratingCount">3</span>)
+</div>
+    <a href="https://g.page/r/CW2knUW1ff0KEBM/review" 
+       class="review-button" 
+       target="_blank">
+      <span class="google-icon"></span>
+      Leave a Review
+    </a>
+
+  </div>
+
+</section>
+
+<style>
+  .google-review-box {
+    text-align: center;
+    margin: 40px auto;
+    padding: 25px 20px;
+    max-width: 350px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    font-family: Arial, sans-serif;
+  }
+
+  .review-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 12px;
+  }
+
+  .review-stars {
+    font-size: 28px;
+    color: #fbbc04;
+    margin-bottom: 6px;
+  }
+
+  .review-score {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 18px;
+  }
+
+  .review-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    color: #444;
+    padding: 12px 22px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid #4285f4;
+    transition: all 0.25s ease;
+  }
+
+  .review-button:hover {
+    background: #4285f4;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(66,133,244,0.4);
+  }
+
+  .google-icon {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://www.gstatic.com/images/branding/product/1x/gsa_48dp.png');
+    background-size: cover;
+    display: inline-block;
+  }
+</style>
+
+<script>
+  /* ⭐ Automatic Star Rendering ⭐ */
+  const rating = 5.0;
+  const count = 3;
+
+  document.getElementById("ratingValue").textContent = rating.toFixed(1);
+  document.getElementById("ratingCount").textContent = count;
+
+  function renderStars(value) {
+    const fullStars = Math.floor(value);
+    const halfStar = value % 1 >= 0.25 && value % 1 <= 0.75;
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+    let stars = "";
+
+    for (let i = 0; i < fullStars; i++) stars += "★";
+    if (halfStar) stars += "☆";
+    for (let i = 0; i < emptyStars; i++) stars += "✩";
+
+    return stars;
+  }
+
+  document.getElementById("ratingStars").textContent = renderStars(rating);
+</script>
+
+<!-- ⭐ ADDING THE HAMBURGER MENU FUNCTION -->
+<script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("show");
+  }
+</script>
 
 </body>
 </html>
