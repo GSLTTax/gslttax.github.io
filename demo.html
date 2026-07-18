@@ -40,7 +40,8 @@ body {
   font-family: 'Inter', sans-serif;
   color: #002147;
 
-  background-image: url('/Images/Cover.png');
+  background-image:
+    url('/Images/Cover.png');
 
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
@@ -58,7 +59,7 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.45); /* your original brightness */
   z-index: -1;
 }
 /* HEADER */
@@ -138,12 +139,12 @@ body {
 
 @media (max-width: 768px) {
   .nav-tabs {
-    position: fixed;
-    top: 120px;
+    position: fixed;        /* make it float */
+    top: 120px;              /* same height as your header */
     left: 0;
     width: 100%;
     background: white;
-    z-index: 10002;
+    z-index: 10002;         /* higher than announcement bar */
     display: none;
     flex-direction: column;
     padding: 10px 0;
@@ -242,22 +243,9 @@ body {
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 14 rgba(0,0,0,0.08);
   font-size: 1.1rem;
   line-height: 1.6;
-}
-
-/* MAP DESIGN ELEMENTS */
-.map-container {
-  width: 100%;
-  margin-top: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.map-container iframe {
-  display: block;
 }
 
 /* GOOGLE REVIEW BOX */
@@ -341,175 +329,176 @@ footer p {
 
 <body>
 
-  <div class="overlay"></div>
 
-  <!-- HEADER -->
-  <div class="fixed-header">
-    <div class="header-inner">
-      <div class="header-left">
-        <img src="/Images/CPA logo1.png" alt="CPA Logo">
-      </div>
+<!-- HEADER -->
+<div class="fixed-header">
+  <div class="header-inner">
 
-      <a href="/" class="header-center" style="text-decoration: none;">
-        <img src="/Images/GSLTLogo.png" alt="GSLT Logo">
-        <span>GSLT Tax and Accounting</span>
-      </a>
-
-      <button class="hamburger" onclick="toggleMenu()">☰</button>
-
-      <div class="nav-tabs" id="navMenu">
-        <a href="/" class="active">Home</a>
-        <a href="/about/">About</a>
-        <a href="/services/">Services</a>
-        <a href="/industries/">Industries</a>
-        <a href="/contact/">Contact</a>
-        <a href="/blog/">Blog</a>
-      </div>
+    <div class="header-left">
+      <img src="/Images/CPA logo1.png" alt="CPA Logo">
     </div>
+
+    <a href="/" class="header-center" style="text-decoration: none;">
+  <img src="/Images/GSLTLogo.png" alt="GSLT Logo">
+  <span>GSLT Tax and Accounting</span>
+</a>
+
+
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-tabs" id="navMenu">
+      <a href="/" class="active">Home</a>
+      <a href="/about/">About</a>
+      <a href="/services/">Services</a>
+      <a href="/industries/">Industries</a>
+      <a href="/contact/">Contact</a>
+      <a href="/blog/">Blog</a>
+    </div>
+
+  </div>
+</div>
+<!-- TOP ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  <div class="announcement-text">
+    📢 Welcome
+  </div>
+</div>
+<div class="page-offset"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Professional Tax & Accounting Services You Can Trust</h1>
+  <p>Serving individuals and businesses across Canada with accuracy, compliance, and care.</p>
+  <a href="/contact/" class="cta-btn">Request an Appointment</a>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <h2>About Us</h2>
+  <p>
+    GSLT Tax and Accounting is a professional CPA firm dedicated to helping individuals and businesses navigate the complexities of tax and financial compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two decades of expertise and personalized service to every client.
+  </p>
+  <p>
+    Whether you're a small business, a growing corporation, or an individual looking for trustworthy tax assistance, we provide tailored solutions to meet your needs.
+  </p>
+</section>
+
+<!-- OUR COMMITMENT -->
+<section class="section">
+  <h2>Our Commitment to Excellence</h2>
+  <p>
+    At GSLT Tax and Accounting, we believe that accuracy, transparency, and professionalism are the foundation of every successful financial relationship. Our firm is committed to delivering timely, compliant, and reliable tax and accounting services that help individuals and businesses stay confident and financially organized.
+  </p>
+  <p>
+    We take pride in offering personalized guidance, clear communication, and long‑term support — ensuring you always have a trusted CPA by your side.
+  </p>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="section">
+  <h2>Who We Serve</h2>
+  <p>We proudly support a wide range of clients across Canada, including:</p>
+  <ul style="font-size:1.15rem; line-height:1.8;">
+    <li>Small and medium‑sized businesses</li>
+    <li>Self‑employed professionals</li>
+    <li>Contractors and consultants</li>
+    <li>Real estate investors</li>
+    <li>New immigrants and first‑time tax filers</li>
+    <li>Non‑profits and community organizations</li>
+    <li>Corporations seeking year‑end compliance and advisory</li>
+  </ul>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <h2>Our Services</h2>
+
+  <div class="services-grid">
+    <div class="service-box">T2 Corporate Tax Filing</div>
+    <div class="service-box">T1 Individual Tax Returns</div>
+    <div class="service-box">GST/HST Registration and Filing</div>
+    <div class="service-box">Bookkeeping and Financial Statements</div>
+    <div class="service-box">Payroll Setup and Remittance</div>
+    <div class="service-box">Tax Planning and Advisory</div>
+    <div class="service-box">New Business Setup Support</div>
+    <div class="service-box">CRA Audit Assistance</div>
   </div>
 
-  <!-- TOP ANNOUNCEMENT BAR -->
-  <div class="announcement-bar">
-    <div class="announcement-text">
-      📢 Welcome to GSLT Tax and Accounting — CPA-led financial solutions you can trust.
+  <p style="margin-top:20px;">
+    <a href="/services/">🔍 View Our Full Services Here</a>
+  </p>
+</section>
+
+<!-- WHAT MAKES US DIFFERENT -->
+<section class="section">
+  <h2>What Makes GSLT Different?</h2>
+  <ul style="font-size:1.15rem; line-height:1.8;">
+    <li><strong>CPA‑Led Expertise:</strong> Every file is reviewed by a Chartered Professional Accountant with over 25 years of experience.</li>
+    <li><strong>Clear, Transparent Pricing:</strong> No surprises — we provide upfront quotes and detailed explanations.</li>
+    <li><strong>Fast Turnaround Times:</strong> Our processes ensure timely and accurate filings.</li>
+    <li><strong>Personalized Support:</strong> We take the time to understand your goals and provide tailored guidance.</li>
+    <li><strong>Secure & Confidential:</strong> Your financial information is handled with the highest level of security and discretion.</li>
+  </ul>
+</section>
+
+<!-- CLIENT SUCCESS STORIES -->
+<section class="section">
+  <h2>Client Success Stories</h2>
+  <p><em>“GSLT helped streamline our bookkeeping and year‑end process. Their guidance has been invaluable to our business.”</em><br>— Small Business Owner, Toronto</p>
+  <p><em>“As a new immigrant, I was unsure about Canadian tax rules. GSLT made everything simple and stress‑free.”</em><br>— Individual Client, Mississauga</p>
+  <p><em>“Our corporation relies on GSLT for accurate financial statements and tax planning. Highly professional and reliable.”</em><br>— Corporate Client, Ontario</p>
+</section>
+
+<!-- OUR PROCESS -->
+<section class="section">
+  <h2>Our Simple and Efficient Process</h2>
+  <ol style="font-size:1.15rem; line-height:1.8;">
+    <li><strong>Initial Consultation:</strong> We discuss your needs and determine the right services for you.</li>
+    <li><strong>Document Collection:</strong> Secure and organized submission of your financial information.</li>
+    <li><strong>Review & Preparation:</strong> CPA Lay-led analysis, preparation, and compliance checks.</li>
+    <li><strong>Final Delivery:</strong> Completed filings, statements, or reports delivered on time.</li>
+    <li><strong>Ongoing Support:</strong> We remain available year‑round for questions, planning, and guidance.</li>
+  </ol>
+</section>
+
+<!-- OUR LOCATION MAP -->
+<section class="section">
+  <h2>Our Location</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2878.5131954116214!2d-79.224112!3d43.824456!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602077fffa6601f7%3A0xafd7db5459da46d!2s!5e0!3m2!1sen!2sca!4v1784383956326!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</section>
+
+<!-- GOOGLE REVIEW -->
+<section class="section">
+  <div class="google-review-box">
+    <div class="review-title">Please Review Us on Google</div>
+    <div class="review-stars" id="ratingStars"></div>
+    <div class="review-score">
+      <span id="ratingValue">5.0</span> (<span id="ratingCount">3</span>)
     </div>
+    <a href="https://g.page/r/CW2knUW1ff0KEBM/review" class="review-button" target="_blank">
+      <span class="google-icon"></span>
+      Leave a Review
+    </a>
   </div>
-  <div class="page-offset"></div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Professional Tax & Accounting Services You Can Trust</h1>
-    <p>Serving individuals and businesses across Canada with accuracy, compliance, and care.</p>
-    <a href="/contact/" class="cta-btn">Request an Appointment</a>
-  </section>
+<!-- FINAL CTA -->
+<section class="section" style="text-align:center;">
+  <h2>Ready to Get Started?</h2>
+  <p>
+    Whether you need personal tax filing, corporate compliance, or ongoing accounting support, GSLT Tax and Accounting is here to help.
+    Let’s work together to simplify your financial life.
+  </p>
+  <a href="/contact/" class="cta-btn" style="display:inline-block; margin-top:15px;">Schedule Your Consultation</a>
+</section>
 
-  <!-- ABOUT -->
-  <section class="section">
-    <h2>About Us</h2>
-    <p>
-      GSLT Tax and Accounting is a professional CPA firm dedicated to helping individuals and businesses navigate the complexities of tax and financial compliance in Canada. Led by George Mathew, CPA, CGA, we bring over two decades of expertise and personalized service to every client.
-    </p>
-    <p>
-      Whether you're a small business, a growing corporation, or an individual looking for trustworthy tax assistance, we provide tailored solutions to meet your needs.
-    </p>
-  </section>
-
-  <!-- OUR COMMITMENT -->
-  <section class="section">
-    <h2>Our Commitment to Excellence</h2>
-    <p>
-      At GSLT Tax and Accounting, we believe that accuracy, transparency, and professionalism are the foundation of every successful financial relationship. Our firm is committed to delivering timely, compliant, and reliable tax and accounting services that help individuals and businesses stay confident and financially organized.
-    </p>
-    <p>
-      We take pride in offering personalized guidance, clear communication, and long‑term support — ensuring you always have a trusted CPA by your side.
-    </p>
-  </section>
-
-  <!-- WHO WE SERVE -->
-  <section class="section">
-    <h2>Who We Serve</h2>
-    <p>We proudly support a wide range of clients across Canada, including:</p>
-    <ul style="font-size:1.15rem; line-height:1.8;">
-      <li>Small and medium‑sized businesses</li>
-      <li>Self‑employed professionals</li>
-      <li>Contractors and consultants</li>
-      <li>Real estate investors</li>
-      <li>New immigrants and first‑time tax filers</li>
-      <li>Non‑profits and community organizations</li>
-      <li>Corporations seeking year‑end compliance and advisory</li>
-    </ul>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="section">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="service-box">T2 Corporate Tax Filing</div>
-      <div class="service-box">T1 Individual Tax Returns</div>
-      <div class="service-box">GST/HST Registration and Filing</div>
-      <div class="service-box">Bookkeeping and Financial Statements</div>
-      <div class="service-box">Payroll Setup and Remittance</div>
-      <div class="service-box">Tax Planning and Advisory</div>
-      <div class="service-box">New Business Setup Support</div>
-      <div class="service-box">CRA Audit Assistance</div>
-    </div>
-    <p style="margin-top:20px;">
-      <a href="/services/">🔍 View Our Full Services Here</a>
-    </p>
-  </section>
-
-  <!-- WHAT MAKES US DIFFERENT -->
-  <section class="section">
-    <h2>What Makes GSLT Different?</h2>
-    <ul style="font-size:1.15rem; line-height:1.8;">
-      <li><strong>CPA‑Led Expertise:</strong> Every file is reviewed by a Chartered Professional Accountant with over 25 years of experience.</li>
-      <li><strong>Clear, Transparent Pricing:</strong> No surprises — we provide upfront quotes and detailed explanations.</li>
-      <li><strong>Fast Turnaround Times:</strong> Our processes ensure timely and accurate filings.</li>
-      <li><strong>Personalized Support:</strong> We take the time to understand your goals and provide tailored guidance.</li>
-      <li><strong>Secure & Confidential:</strong> Your financial information is handled with the highest level of security and discretion.</li>
-    </ul>
-  </section>
-
-  <!-- CLIENT SUCCESS STORIES -->
-  <section class="section">
-    <h2>Client Success Stories</h2>
-    <p><em>“GSLT helped streamline our bookkeeping and year‑end process. Their guidance has been invaluable to our business.”</em><br>— Small Business Owner, Toronto</p>
-    <p><em>“As a new immigrant, I was unsure about Canadian tax rules. GSLT made everything simple and stress‑free.”</em><br>— Individual Client, Mississauga</p>
-    <p><em>“Our corporation relies on GSLT for accurate financial statements and tax planning. Highly professional and reliable.”</em><br>— Corporate Client, Ontario</p>
-  </section>
-
-  <!-- OUR PROCESS -->
-  <section class="section">
-    <h2>Our Simple and Efficient Process</h2>
-    <ol style="font-size:1.15rem; line-height:1.8;">
-      <li><strong>Initial Consultation:</strong> We discuss your needs and determine the right services for you.</li>
-      <li><strong>Document Collection:</strong> Secure and organized submission of your financial information.</li>
-      <li><strong>Review & Preparation:</strong> CPA‑led analysis, preparation, and compliance checks.</li>
-      <li><strong>Final Delivery:</strong> Completed filings, statements, or reports delivered on time.</li>
-      <li><strong>Ongoing Support:</strong> We remain available year‑round for questions, planning, and guidance.</li>
-    </ol>
-  </section>
-
-  <!-- OUR LOCATION MAP -->
-  <section class="section">
-    <h2>Our Location</h2>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2878.5131954116214!2d-79.224112!3d43.824456!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602077fffa6601f7%3A0xafd7db5459da46d!2s!5e0!3m2!1sen!2sca!4v1784383956326!5m2!1sen!2sca" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </div>
-  </section>
-
-  <!-- GOOGLE REVIEW -->
-  <section class="section">
-    <div class="google-review-box">
-      <div class="review-title">Please Review Us on Google</div>
-      <div class="review-stars" id="ratingStars"></div>
-      <div class="review-score">
-        <span id="ratingValue">5.0</span> (<span id="ratingCount">3</span>)
-      </div>
-      <a href="https://g.page/r/CW2knUW1ff0KEBM/review" class="review-button" target="_blank">
-        <span class="google-icon"></span>
-        Leave a Review
-      </a>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="section" style="text-align:center;">
-    <h2>Ready to Get Started?</h2>
-    <p>
-      Whether you need personal tax filing, corporate compliance, or ongoing accounting support, GSLT Tax and Accounting is here to help.
-      Let’s work together to simplify your financial life.
-    </p>
-    <a href="/contact/" class="cta-btn" style="display:inline-block; margin-top:15px;">Schedule Your Consultation</a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <img src="/Images/GSLTLogo.png" alt="GSLT Logo">
-    <p>GSLT Tax and Accounting</p>
-    <p>Toronto, Ontario</p>
-    <p>Email: info@gslttax.com</p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <img src="/Images/GSLTLogo.png" alt="GSLT Logo">
+  <p>GSLT Tax and Accounting</p>
+  <p>Toronto, Ontario</p>
+  <p>Email: info@gslttax.com</p>
+</footer>
 
   <!-- STAR RENDERING -->
   <script>
