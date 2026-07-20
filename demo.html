@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSLT Tax & Accounting | Modern CPA & Tax Solutions</title>
-    <!-- Tailwind CSS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - GSLT Tax and Accounting</title>
+    <link rel="icon" href="/Images/GSLTLogo.png" type="image/png" />
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
+                        navy: {
+                            800: '#003366',
+                            900: '#002147',
+                            950: '#00142e',
+                        },
                         brand: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            500: '#0284c7',
-                            600: '#0369a1',
-                            900: '#0c4a6e',
-                            gold: '#f59e0b',
+                            blue: '#003FA2',
+                            accent: '#0077aa',
+                            gold: '#fbbc04',
                         }
                     }
                 }
@@ -27,193 +32,421 @@
         }
     </script>
     <style>
-        .glass {
-            background: rgba(255, 255, 255, 0.7);
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: scroll-left 22s linear infinite;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-nav {
+            background: rgba(0, 33, 71, 0.9);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-accent selection:text-white relative">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-800/50 bg-slate-950/80">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="p-2 bg-gradient-to-tr from-brand-600 to-cyan-400 rounded-xl shadow-lg shadow-brand-500/20">
-                    <i data-lucide="calculator" class="w-6 h-6 text-white"></i>
-                </div>
-                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
-                    GSLT <span class="text-brand-500">Tax</span>
-                </span>
-            </div>
+    <!-- BACKGROUND COVER & OVERLAY -->
+    <div class="fixed inset-0 z-[-2] bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('/Images/Cover.png');"></div>
+    <div class="fixed inset-0 z-[-1] bg-slate-950/85 backdrop-blur-[2px]"></div>
+
+    <!-- ANNOUNCEMENT BANNER -->
+    <div class="fixed top-0 left-0 w-full bg-navy-800 text-slate-200 text-xs sm:text-sm font-semibold z-50 overflow-hidden py-1.5 border-b border-white/10 shadow-md">
+        <div class="animate-marquee">
+            📢 Welcome to GSLT Tax & Accounting — Professional CPA Solutions Across Canada
+        </div>
+    </div>
+
+    <!-- FIXED HEADER / NAVIGATION -->
+    <header class="fixed top-[32px] left-0 w-full z-40 glass-nav border-b border-white/10 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
             
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                <a href="#services" class="hover:text-brand-500 transition-colors">Services</a>
-                <a href="#calculator" class="hover:text-brand-500 transition-colors">Tax Estimator</a>
-                <a href="#about" class="hover:text-brand-500 transition-colors">About Us</a>
-                <a href="#contact" class="hover:text-brand-500 transition-colors">Contact</a>
-            </div>
+            <!-- Left: Logos & Title -->
+            <a href="/" class="flex items-center gap-3 group">
+                <img src="/Images/GSLTLogo.png" alt="GSLT Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105" />
+                <span class="text-lg sm:text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
+                    GSLT <span class="text-cyan-400">Tax</span>
+                </span>
+                <img src="/Images/CPA logo1.png" alt="CPA Logo" class="h-8 sm:h-10 w-auto object-contain hidden md:block border-l border-slate-700 pl-3 ml-1" />
+            </a>
 
-            <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-cyan-500 text-white font-semibold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-brand-500/20">
-                <span>Book Consultation</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-6 font-medium text-sm text-slate-300">
+                <a href="/" class="text-cyan-400 border-b-2 border-cyan-400 pb-1 font-semibold">Home</a>
+                <a href="/about/" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="/services/" class="hover:text-cyan-400 transition-colors">Services</a>
+                <a href="/industries/" class="hover:text-cyan-400 transition-colors">Industries</a>
+                <a href="/contact/" class="hover:text-cyan-400 transition-colors">Contact</a>
+                <a href="/blog/" class="hover:text-cyan-400 transition-colors">Blog</a>
+            </nav>
+
+            <!-- CTA & Hamburger -->
+            <div class="flex items-center gap-3">
+                <a href="/contact/" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl shadow-lg shadow-blue-500/20 transition-all hover:scale-[1.02]">
+                    <span>Book Appointment</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+
+                <button onclick="toggleMenu()" class="lg:hidden p-2 text-slate-300 hover:text-white focus:outline-none">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="navMenu" class="hidden lg:hidden bg-navy-950/95 border-b border-slate-800 px-6 py-4 space-y-3">
+            <a href="/" class="block text-cyan-400 font-semibold text-base">Home</a>
+            <a href="/about/" class="block text-slate-300 hover:text-white text-base">About</a>
+            <a href="/services/" class="block text-slate-300 hover:text-white text-base">Services</a>
+            <a href="/industries/" class="block text-slate-300 hover:text-white text-base">Industries</a>
+            <a href="/contact/" class="block text-slate-300 hover:text-white text-base">Contact</a>
+            <a href="/blog/" class="block text-slate-300 hover:text-white text-base">Blog</a>
+            <a href="/contact/" class="inline-block w-full text-center bg-blue-600 text-white font-semibold py-2.5 rounded-xl mt-2">
+                Request Appointment
             </a>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-        <!-- Background Glows -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+    <!-- MAIN CONTAINER -->
+    <main class="pt-36">
 
-        <div class="max-w-7xl mx-auto px-6 relative">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-8">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-brand-500 text-xs font-semibold tracking-wide uppercase">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i>
-                        Licensed CPA & Tax Professionals
-                    </div>
-                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                        Precision Accounting. <br/>
-                        <span class="bg-gradient-to-r from-brand-500 via-cyan-400 to-teal-300 bg-clip-text text-transparent">
-                            Maximum Tax Savings.
-                        </span>
-                    </h1>
-                    <p class="text-slate-400 text-lg max-w-xl">
-                        We streamline complex corporate taxes, personal returns, and bookkeeping so you can focus on building your wealth.
+        <!-- HERO SECTION -->
+        <section class="min-h-[75vh] flex flex-col justify-center items-center text-center px-4 max-w-5xl mx-auto py-12">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-cyan-400 text-xs sm:text-sm font-medium mb-6">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                Chartered Professional Accountant (CPA) Services
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                Professional Tax & Accounting Services <br class="hidden sm:block"/>
+                <span class="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                    You Can Trust
+                </span>
+            </h1>
+
+            <p class="text-base sm:text-xl text-slate-300 max-w-2xl mb-8 leading-relaxed">
+                Serving individuals and businesses across Canada with accuracy, compliance, and care.
+            </p>
+
+            <a href="/contact/" class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-xl shadow-xl shadow-blue-500/25 transition-all hover:scale-105">
+                <span>Request an Appointment</span>
+                <i data-lucide="calendar" class="w-5 h-5"></i>
+            </a>
+        </section>
+
+        <div class="max-w-5xl mx-auto px-4 space-y-12 pb-20">
+
+            <!-- ABOUT US -->
+            <section class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <div class="flex items-center gap-3 mb-4 text-cyan-400">
+                    <i data-lucide="user-check" class="w-6 h-6"></i>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">About Us</h2>
+                </div>
+                <div class="space-y-4 text-slate-300 leading-relaxed text-base sm:text-lg">
+                    <p>
+                        GSLT Tax and Accounting is a professional CPA firm dedicated to helping individuals and businesses navigate the complexities of tax and financial compliance in Canada. Led by <strong class="text-white">George Mathew, CPA, CGA</strong>, we bring over two decades of expertise and personalized service to every client.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#calculator" class="inline-flex justify-center items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-6 py-3.5 rounded-xl transition-all shadow-lg shadow-brand-500/25">
-                            Estimate Your Tax Return
-                        </a>
-                        <a href="#services" class="inline-flex justify-center items-center gap-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold px-6 py-3.5 rounded-xl transition-all">
-                            Explore Services
-                        </a>
+                    <p>
+                        Whether you're a small business, a growing corporation, or an individual looking for trustworthy tax assistance, we provide tailored solutions to meet your needs.
+                    </p>
+                </div>
+            </section>
+
+            <!-- OUR COMMITMENT TO EXCELLENCE -->
+            <section class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <div class="flex items-center gap-3 mb-4 text-cyan-400">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Our Commitment to Excellence</h2>
+                </div>
+                <div class="space-y-4 text-slate-300 leading-relaxed text-base sm:text-lg">
+                    <p>
+                        At GSLT Tax and Accounting, we believe that accuracy, transparency, and professionalism are the foundation of every successful financial relationship. Our firm is committed to delivering timely, compliant, and reliable tax and accounting services that help individuals and businesses stay confident and financially organized.
+                    </p>
+                    <p>
+                        We take pride in offering personalized guidance, clear communication, and long‑term support — ensuring you always have a trusted CPA by your side.
+                    </p>
+                </div>
+            </section>
+
+            <!-- WHO WE SERVE -->
+            <section class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <div class="flex items-center gap-3 mb-6 text-cyan-400">
+                    <i data-lucide="users" class="w-6 h-6"></i>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Who We Serve</h2>
+                </div>
+                <p class="text-slate-300 text-base sm:text-lg mb-6">We proudly support a wide range of clients across Canada, including:</p>
+                
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-cyan-400 shrink-0"></i>
+                        <span class="text-slate-200">Small and medium‑sized businesses</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-cyan-400 shrink-0"></i>
+                        <span class="text-slate-200">Self‑employed professionals</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-cyan-400 shrink-0"></i>
+                        <span class="text-slate-200">Contractors and consultants</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-cyan-400 shrink-0"></i>
+                        <span class="text-slate-200">Real estate investors</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-cyan-400 shrink-0"></i>
+                        <span class="text-slate-200">New immigrants and first‑time tax filers</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-cyan-400 shrink-0"></i>
+                        <span class="text-slate-200">Non‑profits and community organizations</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-slate-900/60 rounded-xl border border-slate-800 sm:col-span-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-cyan-400 shrink-0"></i>
+                        <span class="text-slate-200">Corporations seeking year‑end compliance and advisory</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERVICES -->
+            <section class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <div class="flex items-center gap-3 mb-6 text-cyan-400">
+                    <i data-lucide="calculator" class="w-6 h-6"></i>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Our Services</h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-colors flex flex-col justify-center text-center">
+                        <i data-lucide="file-text" class="w-6 h-6 text-cyan-400 mx-auto mb-2"></i>
+                        <span class="font-semibold text-slate-200 text-sm">T2 Corporate Tax Filing</span>
+                    </div>
+                    <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-colors flex flex-col justify-center text-center">
+                        <i data-lucide="user" class="w-6 h-6 text-cyan-400 mx-auto mb-2"></i>
+                        <span class="font-semibold text-slate-200 text-sm">T1 Individual Tax Returns</span>
+                    </div>
+                    <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-colors flex flex-col justify-center text-center">
+                        <i data-lucide="percent" class="w-6 h-6 text-cyan-400 mx-auto mb-2"></i>
+                        <span class="font-semibold text-slate-200 text-sm">GST/HST Registration & Filing</span>
+                    </div>
+                    <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-colors flex flex-col justify-center text-center">
+                        <i data-lucide="book-open" class="w-6 h-6 text-cyan-400 mx-auto mb-2"></i>
+                        <span class="font-semibold text-slate-200 text-sm">Bookkeeping & Financials</span>
+                    </div>
+                    <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-colors flex flex-col justify-center text-center">
+                        <i data-lucide="wallet" class="w-6 h-6 text-cyan-400 mx-auto mb-2"></i>
+                        <span class="font-semibold text-slate-200 text-sm">Payroll Setup & Remittance</span>
+                    </div>
+                    <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-colors flex flex-col justify-center text-center">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-cyan-400 mx-auto mb-2"></i>
+                        <span class="font-semibold text-slate-200 text-sm">Tax Planning & Advisory</span>
+                    </div>
+                    <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-colors flex flex-col justify-center text-center">
+                        <i data-lucide="briefcase" class="w-6 h-6 text-cyan-400 mx-auto mb-2"></i>
+                        <span class="font-semibold text-slate-200 text-sm">New Business Setup</span>
+                    </div>
+                    <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-colors flex flex-col justify-center text-center">
+                        <i data-lucide="shield-alert" class="w-6 h-6 text-cyan-400 mx-auto mb-2"></i>
+                        <span class="font-semibold text-slate-200 text-sm">CRA Audit Assistance</span>
                     </div>
                 </div>
 
-                <!-- Floating Card / Interactive Tax Estimator -->
-                <div id="calculator" class="lg:col-span-5">
-                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-2xl backdrop-blur-xl relative">
-                        <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
-                            <i data-lucide="sparkles" class="text-brand-500 w-5 h-5"></i>
-                            Quick Estimate Calculator
-                        </h3>
-                        <p class="text-xs text-slate-400 mb-6">Estimate your potential return bracket instantly.</p>
+                <div class="mt-8 text-center">
+                    <a href="/services/" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold transition-colors">
+                        <span>View Our Full Services Here</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </section>
 
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-medium text-slate-300 mb-1">Filing Type</label>
-                                <select id="filingType" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-slate-200 focus:ring-2 focus:ring-brand-500 outline-none text-sm">
-                                    <option value="personal">Personal Tax Return (T1)</option>
-                                    <option value="corporate">Corporate Business Tax (T2)</option>
-                                    <option value="self-employed">Self-Employed / Sole Proprietor</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-slate-300 mb-1">Estimated Annual Income ($)</label>
-                                <input type="number" id="incomeInput" placeholder="e.g. 85000" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-slate-200 focus:ring-2 focus:ring-brand-500 outline-none text-sm">
-                            </div>
-                            
-                            <button onclick="calculateEstimate()" class="w-full bg-gradient-to-r from-brand-600 to-cyan-500 hover:opacity-90 text-white font-semibold py-3 rounded-lg transition text-sm">
-                                Calculate Potential Savings
-                            </button>
+            <!-- WHAT MAKES US DIFFERENT -->
+            <section class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <div class="flex items-center gap-3 mb-6 text-cyan-400">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">What Makes GSLT Different?</h2>
+                </div>
 
-                            <div id="resultBox" class="hidden mt-4 p-4 bg-brand-950/40 border border-brand-500/30 rounded-lg text-center">
-                                <span class="text-xs text-slate-400 uppercase tracking-wider block">Estimated Savings Range</span>
-                                <span id="estimateValue" class="text-2xl font-bold text-cyan-400">$0</span>
-                            </div>
+                <ul class="space-y-4 text-slate-300 text-base sm:text-lg">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold shrink-0 mt-1"></i>
+                        <span><strong class="text-white">CPA‑Led Expertise:</strong> Every file is reviewed by a Chartered Professional Accountant with over 25 years of experience.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold shrink-0 mt-1"></i>
+                        <span><strong class="text-white">Clear, Transparent Pricing:</strong> No surprises — we provide upfront quotes and detailed explanations.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold shrink-0 mt-1"></i>
+                        <span><strong class="text-white">Fast Turnaround Times:</strong> Our processes ensure timely and accurate filings.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold shrink-0 mt-1"></i>
+                        <span><strong class="text-white">Personalized Support:</strong> We take the time to understand your goals and provide tailored guidance.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold shrink-0 mt-1"></i>
+                        <span><strong class="text-white">Secure & Confidential:</strong> Your financial information is handled with the highest level of security and discretion.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- CLIENT SUCCESS STORIES -->
+            <section class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <div class="flex items-center gap-3 mb-6 text-cyan-400">
+                    <i data-lucide="quote" class="w-6 h-6"></i>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Client Success Stories</h2>
+                </div>
+
+                <div class="grid gap-6">
+                    <blockquote class="p-5 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <p class="italic text-slate-300 mb-3">“GSLT helped streamline our bookkeeping and year‑end process. Their guidance has been invaluable to our business.”</p>
+                        <footer class="text-xs text-cyan-400 font-semibold">— Small Business Owner, Toronto</footer>
+                    </blockquote>
+                    <blockquote class="p-5 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <p class="italic text-slate-300 mb-3">“As a new immigrant, I was unsure about Canadian tax rules. GSLT made everything simple and stress‑free.”</p>
+                        <footer class="text-xs text-cyan-400 font-semibold">— Individual Client, Mississauga</footer>
+                    </blockquote>
+                    <blockquote class="p-5 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <p class="italic text-slate-300 mb-3">“Our corporation relies on GSLT for accurate financial statements and tax planning. Highly professional and reliable.”</p>
+                        <footer class="text-xs text-cyan-400 font-semibold">— Corporate Client, Ontario</footer>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- OUR PROCESS -->
+            <section class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <div class="flex items-center gap-3 mb-6 text-cyan-400">
+                    <i data-lucide="layers" class="w-6 h-6"></i>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Our Simple and Efficient Process</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center shrink-0">1</div>
+                        <div>
+                            <h3 class="font-semibold text-white text-lg">Initial Consultation</h3>
+                            <p class="text-slate-300">We discuss your needs and determine the right services for you.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center shrink-0">2</div>
+                        <div>
+                            <h3 class="font-semibold text-white text-lg">Document Collection</h3>
+                            <p class="text-slate-300">Secure and organized submission of your financial information.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center shrink-0">3</div>
+                        <div>
+                            <h3 class="font-semibold text-white text-lg">Review & Preparation</h3>
+                            <p class="text-slate-300">CPA‑led analysis, preparation, and compliance checks.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center shrink-0">4</div>
+                        <div>
+                            <h3 class="font-semibold text-white text-lg">Final Delivery</h3>
+                            <p class="text-slate-300">Completed filings, statements, or reports delivered on time.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center shrink-0">5</div>
+                        <div>
+                            <h3 class="font-semibold text-white text-lg">Ongoing Support</h3>
+                            <p class="text-slate-300">We remain available year‑round for questions, planning, and guidance.</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- OUR LOCATION MAP -->
+            <section class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl overflow-hidden">
+                <div class="flex items-center gap-3 mb-6 text-cyan-400">
+                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Our Location</h2>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-slate-800 shadow-lg">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2878.5131954116214!2d-79.224112!3d43.824456!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602077fffa6601f7%3A0xafd7db5459da46d!2s!5e0!3m2!1sen!2sca!4v1784383956326!5m2!1sen!2sca" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </section>
+
+            <!-- GOOGLE REVIEW BOX -->
+            <section class="glass-card rounded-2xl p-8 text-center max-w-md mx-auto shadow-2xl border border-brand-gold/20">
+                <h3 class="text-xl font-bold text-white mb-2">Please Review Us on Google</h3>
+                <div id="ratingStars" class="text-3xl text-brand-gold mb-1 tracking-widest"></div>
+                <div class="text-lg font-semibold text-slate-200 mb-6">
+                    <span id="ratingValue">5.0</span> (<span id="ratingCount">13</span>)
+                </div>
+                <a href="https://g.page/r/CW2knUW1ff0KEBM/review" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-slate-900 font-bold px-6 py-3 rounded-full transition-transform hover:scale-105 shadow-md">
+                    <img src="https://www.gstatic.com/images/branding/product/1x/gsa_48dp.png" alt="Google" class="w-5 h-5">
+                    <span>Leave a Review</span>
+                </a>
+            </section>
+
+            <!-- FINAL CTA -->
+            <section class="glass-card rounded-2xl p-8 sm:p-12 text-center shadow-2xl border border-blue-500/30">
+                <h2 class="text-3xl font-extrabold text-white mb-4">Ready to Get Started?</h2>
+                <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-8">
+                    Whether you need personal tax filing, corporate compliance, or ongoing accounting support, GSLT Tax and Accounting is here to help. Let’s work together to simplify your financial life.
+                </p>
+                <a href="/contact/" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl transition-transform hover:scale-105">
+                    <span>Schedule Your Consultation</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </section>
+
         </div>
-    </section>
+    </main>
 
-    <!-- Services Grid -->
-    <section id="services" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-white mb-4">Comprehensive Financial Services</h2>
-                <p class="text-slate-400 text-sm">Tailored corporate and personal tax solutions designed to ensure CRA compliance and optimize your tax position.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-brand-500/10 rounded-xl flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="building-2"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Corporate Tax (T2)</h3>
-                    <p class="text-slate-400 text-sm">End-to-end corporate tax returns, GST/HST filing, financial statement preparation, and strategic tax planning.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-brand-500/10 rounded-xl flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="user-check"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Personal Income Tax (T1)</h3>
-                    <p class="text-slate-400 text-sm">Maximize eligible deductions for employment income, rental properties, investments, and self-employment.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-brand-500/10 rounded-xl flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="book-open"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Bookkeeping & Payroll</h3>
-                    <p class="text-slate-400 text-sm">Keep your business books audit-ready year-round with accurate payroll management and monthly reconciliations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer / Contact -->
-    <footer id="contact" class="py-16 bg-slate-950 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
-            <div>
-                <h3 class="text-2xl font-bold text-white mb-4">Ready to optimize your taxes?</h3>
-                <p class="text-slate-400 text-sm mb-6">Schedule a free initial consultation with our accounting team today.</p>
-                <div class="space-y-3 text-slate-300 text-sm">
-                    <div class="flex items-center gap-3">
-                        <i data-lucide="phone" class="text-brand-500 w-4 h-4"></i>
-                        <span>Contact Office for Appointments</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <i data-lucide="mail" class="text-brand-500 w-4 h-4"></i>
-                        <span>info@gslttax.com</span>
-                    </div>
-                </div>
-            </div>
-            <div class="text-slate-500 text-xs flex items-end justify-start md:justify-end">
-                © <script>document.write(new Date().getFullYear())</script> GSLT Tax & Accounting. Built for GitHub Pages.
-            </div>
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 border-t border-slate-800 py-12 text-center text-slate-400">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col items-center gap-4">
+            <img src="/Images/GSLTLogo.png" alt="GSLT Logo" class="h-12 w-auto object-contain">
+            <p class="text-lg font-semibold text-white">GSLT Tax and Accounting</p>
+            <p class="text-sm">Toronto, Ontario | Email: <a href="mailto:info@gslttax.com" class="text-cyan-400 hover:underline">info@gslttax.com</a></p>
+            <p class="text-xs text-slate-500 mt-4">© <script>document.write(new Date().getFullYear())</script> GSLT Tax and Accounting. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- SCRIPTS -->
     <script>
-        // Initialize Lucide Icons
+        // Lucide Icons
         lucide.createIcons();
 
-        // Simple interactive tax calculator logic
-        function calculateEstimate() {
-            const income = parseFloat(document.getElementById('incomeInput').value);
-            const resultBox = document.getElementById('resultBox');
-            const estimateValue = document.getElementById('estimateValue');
-
-            if (isNaN(income) || income <= 0) {
-                alert('Please enter a valid income amount.');
-                return;
-            }
-
-            // Mock tax optimization savings calculation (e.g., ~3-8% savings)
-            const minSavings = Math.round(income * 0.03);
-            const maxSavings = Math.round(income * 0.07);
-
-            estimateValue.innerText = `$${minSavings.toLocaleString()} - $${maxSavings.toLocaleString()}`;
-            resultBox.classList.remove('hidden');
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById("navMenu");
+            menu.classList.toggle("hidden");
         }
+
+        // Star Rendering Logic
+        const rating = 5.0;
+        const count = 13;
+
+        document.getElementById("ratingValue").textContent = rating.toFixed(1);
+        document.getElementById("ratingCount").textContent = count;
+
+        function renderStars(value) {
+            const fullStars = Math.floor(value);
+            const halfStar = value % 1 >= 0.25 && value % 1 <= 0.75;
+            const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+            let stars = "";
+            for (let i = 0; i < fullStars; i++) stars += "★";
+            if (halfStar) stars += "☆";
+            for (let i = 0; i < emptyStars; i++) stars += "✩";
+            return stars;
+        }
+
+        document.getElementById("ratingStars").textContent = renderStars(rating);
     </script>
 </body>
 </html>
